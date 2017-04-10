@@ -30,3 +30,11 @@
 
 
 Efficient parking finder
+
+## 7. Proximity to Danger
+###### Christopher (Tyler) Sorensen Storyboard
+![Proximity To Danger](https://raw.githubusercontent.com/SpiritRushAhri/team17/master/images/IMG_0116.JPG")
+
+## 8. Map/Location Based Stories
+######
+![Location Stories](https://raw.githubusercontent.com/SpiritRushAhri/team17/master/images/IMG_0115.JPG")
