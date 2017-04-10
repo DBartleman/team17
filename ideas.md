@@ -1,28 +1,38 @@
-<!-- Andrew Bartleman Hide and Seek Storyboard -->
-Hide and seek on campus
-![alt text][hideAndSeek1]
-[hideAndSeek1]: https://github.com/SpiritRushAhri/team17/blob/master/images/hideandseek1.JPG "Hide and Seek Storyboard"
 
-<!-- Andrew Bartleman Geocaching Storyboard -->
-Geocaching on campus
-![alt text][geocache1]
-[geocache1]: https://github.com/SpiritRushAhri/team17/blob/master/images/geocache1.JPG "Geocache Storyboard"
+## 1. Hide and seek on campus
+------
+###### Andrew Bartleman Hide and Seek Storyboard
+![Hide and Seek 1](https://raw.githubusercontent.com/SpiritRushAhri/team17/master/images/hideandseek1.JPG "Hide and Seek Storyboard")
 
-App that shows businesses open after midnight
 
-<!-- Andrew Fancett Open Late Storyboard -->
-![alt text][openLate1]
-[openLate1]: https://github.com/SpiritRushAhri/team17/blob/master/images/Openlate1.JPG "Open Late Storyboard 1"
+## 2. Geocaching on campus
+------
+###### Andrew Bartleman Geocaching Storyboard
+![Geo Cache 1](https://raw.githubusercontent.com/SpiritRushAhri/team17/master/images/geocache1.JPG "Geocache Storyboard")
 
-Hiking trail finder near campus
 
-<!-- Andrew Fancett Hiking Trail Storyboard -->
-![alt text][hiking1]
-[hiking1]: https://github.com/SpiritRushAhri/team17/blob/master/images/hiking1.JPG "Hiking Storyboard 1"
+## 3. App that shows businesses open after midnight
+------
+###### Andrew Fancett Open Late Storyboard
+![Open Late 1](https://raw.githubusercontent.com/SpiritRushAhri/team17/master/images/Openlate1.JPG "Open Late Storyboard 1")
+
+
+## 4. Hiking trail finder near campus
+------
+###### Andrew Fancett Hiking Trail Storyboard
+![Hiking 1](https://raw.githubusercontent.com/SpiritRushAhri/team17/master/images/hiking1.JPG "Hiking Storyboard 1")
+
+
+## 5. Seat vacancy in coffee shop finder
+------
+###### Cynthia Hong Storyboard
+![Seat Vancancy 1](https://raw.githubusercontent.com/SpiritRushAhri/team17/master/images/SeatVacancy1.JPG "Seat Vancancy 1")
+
+
+## 6. Happy hour
+------
+###### Cynthia Hong Storyboard
+![Happy Hour 1](https://raw.githubusercontent.com/SpiritRushAhri/team17/master/images/HappyHour1.JPG "Happy Hour")
+
 
 Efficient parking finder
-
-Seat vacancy in coffee shop finder using many devices
-
-Happy hour
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Happy Hour")
