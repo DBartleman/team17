@@ -23,3 +23,6 @@ Hiking trail finder near campus
 Efficient parking finder
 
 Seat vacancy in coffee shop finder using many devices
+
+Happy hour
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Happy Hour")
