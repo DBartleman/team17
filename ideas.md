@@ -1,6 +1,12 @@
+<!-- Andrew Bartleman Hide and Seek Storyboard -->
 Hide and seek on campus
+![alt text][hideAndSeek1]
+[hideAndSeek1]: https://github.com/Dbartleman/team17/blob/master/images/hideandseek1.JPG "Hide and Seek Storyboard"
 
+<!-- Andrew Bartleman Geocaching Storyboard -->
 Geocaching on campus
+![alt text][geocache1]
+[geocache1]: https://github.com/Dbartleman/team17/blob/master/images/geocache1.JPG "Hide and Seek Storyboard"
 
 App that shows businesses open after midnight
 
