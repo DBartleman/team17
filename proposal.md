@@ -9,7 +9,7 @@ Maximum 140-character “tweet length” catchy summary of project
 *A fun way to share your music with those around and expand your music library by looking at what others around you are listening to! 
 
 ###### Storyboard:
-![Trendy](link here "Title of Storyboard")
+![Trendy](https://raw.githubusercontent.com/SpiritRushAhri/team17/master/images/Trendy.JPG "Trendy")
 
 
 
