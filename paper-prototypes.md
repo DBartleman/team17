@@ -1,0 +1,2 @@
+![Andrew Paper Prototype](https://raw.githubusercontent.com/SpiritRushAhri/team17/master/images/Andrew.JPG "Andrew Fancett Paper Prototype")
+This shows the basic view of the app, the user will be able to see what music is currently popular and can select the bubbles to see more detailed information
