@@ -10,30 +10,38 @@
     </style>
   </head>
   <body>
-    <h3>My Google Maps Demo</h3>
-    <div id="map"></div>
-    <script>
+    <div class = "col-sm-12">
+          <h3>My Google Maps Demo</h3>
+          <div id="map"></div>
+        <script>
       function initMap() {
-        var uluru = {lat: -25.363, lng: 131.044};
+        var uluru = {lat: 32.8801, lng: -117.2340};
         var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 4,
-          center: uluru
+          zoom: 15,
+          center: uluru;
         });
         var marker = new google.maps.Marker({
           position: uluru,
           map: map
         });
+          
       }
-    </script>
+        </script>
+    </div>
+  </body>
+    <!-- use google geolocation api for current location, need separate file of js methods-->
+    <!-- Maps javascript -->
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3jzZQx9KgOlNtQ9tDU2ty0BIYcC5mwGk&callback=initMap">
     </script>
-  </body>
-    <!-- jQuery first, then Bootstrap JS. -->
+    <!-- jQuery -->
       <script
   src="https://code.jquery.com/jquery-3.1.1.js"
   integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
   crossorigin="anonymous"></script>
+    <!-- Bootstrap js -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <!-- Custom JS -->
+        <script src= "team17/ctport.js"></script>
 </html>
