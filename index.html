@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
+     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-       <style>
-      /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-      #map {
-        height: 100%;
-      }
-      /* Optional: Makes the sample page fill the window. */
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-    </style>
+     <link rel="stylesheet" href="css/index.css">
+     <script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+<script src="http://datamaps.github.io/scripts/0.4.4/datamaps.usa.min.js"></script>
+<script scr="http://ws.audioscrobbler.com/2.0/"></script>
+
+
+
   </head>
   <body>
       <h1>it's a map!</h1>
+
+      <div id="bubbles" style="position: relative; width: 100%; height: 100%;"></div>
+
+
+      <div id="result">
+            <p> Andrew's Top Tracks </p>
+          </div>
+      <!--
     <div id="map"></div>
     <script>
       // Note: This example requires that you consent to location sharing when
@@ -62,6 +66,8 @@
       }
     </script>
 
+-->
+
   </body>
     <!-- use google geolocation api for current location, need separate file of js methods-->
     <!-- Maps javascript -->
@@ -78,4 +84,9 @@
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <!-- Custom JS -->
         <script src= "team17/ctport.js"></script>
+        <script type="text/javascript" src="event.js"></script>
+        <script type="text/javascript" src="css/js/lastfm.api.md5.js"></script>
+        <script type="text/javascript" src="css/js/lastfm.api.js"></script>
+        <script type="text/javascript" src="css/js/main.js"></script>
+        <script type="text/javascript" src="css/js/lastfm.api.cache.js"></script>
 </html>
