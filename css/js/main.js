@@ -22,6 +22,24 @@ $(document).ready(function() {
         $.each(json.toptracks.track, function(i, item) {
             html += "<p><a href=" + item.url + " target='_blank'>" + item.name + " - " + "Play count : " +item.playcount + "</a></p>";
         });
-        $('#result').append(html);
+        $('#andrew-top').append(html);
     });
 });
+
+$(document).ready(function() {
+    $.getJSON("http://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=6df5baf8c242a7d5eef05774443864a3&format=json", function(json) {
+        var html = '';
+        $.each(json.tracks.track, function(i, item) {
+            html += "<p><a href=" + item.url + " target='_blank'>" + item.name + " - " + "Play count : " +item.playcount + "</a></p>";
+        });
+        $('#top').append(html);
+    });
+});
+/*
+
+$(document.ready(function(){
+  $.getJSON("http://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=6df5baf8c242a7d5eef05774443864a3&format=json",function(json){
+    chart.getToptracks();
+    $('#map').append(html);
+  });
+});*/
