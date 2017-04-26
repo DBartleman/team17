@@ -22,3 +22,8 @@ html, body {
   text-align: center;
   border: 2px solid black;
 }
+
+#chart-top{
+    text-align: center;
+     border: 2px solid black;
+}
