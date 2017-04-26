@@ -92,7 +92,7 @@ var bubble_map = new Datamap({
     });
 
 
-/* this creates a marker and circle for Google Maps
+/* this creates a marker and circle for Google Maps */
 
         function initMap() {
           var uluru = {lat: 32.8801, lng: -117.2340};
@@ -179,4 +179,3 @@ var bubble_map = new Datamap({
 
 
         }
-*/
