@@ -1,29 +1,12 @@
 /* Always set the map height explicitly to define the size of the div
  * element that contains the map. */
 #map {
-  height: 100%;
+  height: 75%;
+  width: 100%;
 }
 /* Optional: Makes the sample page fill the window. */
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-}
-
-.datamaps-bubble{
-  fill: #000 !important;
-}
-
-.datamap{
-  background-color: white;
-}
-
-#andrew-top{
-  text-align: center;
-  border: 2px solid black;
-}
-
-#chart-top{
-    text-align: center;
-     border: 2px solid black;
 }
