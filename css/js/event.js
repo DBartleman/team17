@@ -153,8 +153,10 @@ $(document).ready(function() {
         var html = '';
         $.each(json.toptracks.track, function(i, item) {
             html += "<p><a href=" + item.url + " target='_blank'>" + item.name + " - " + "Play count : " +item.playcount + "</a></p>";
+            console.log("Jquery loop executed");
         });
         $('#andrew-top').append(html);
+        console.log("append html");
     });
 });
 /*
