@@ -44,7 +44,7 @@
 		        "city": "Chicago, IL",
 		        "lat": 41.878,
 		        "lng": -87.629,
-		        "description": "blank"
+		        "description": "http://ws.audioscrobbler.com/2.0/?method=chart.gettopartists&api_key=YOUR_API_KEY&format=json"
 		    },
 		    {
 		        "city": "Los Angeles, CA",
@@ -86,8 +86,12 @@
 			}
 		};
 
+var contentString = "hello world";
 		// Creating a global infoWindow object that will be reused by all markers
-		var infoWindow = new google.maps.InfoWindow();
+		var infowindow = new google.maps.InfoWindow({
+	    content: contentString,
+			maxWidth: 500
+	  });
 
 		// Looping through the JSON data
 		for (var i = 0, length = json.length; i < length; i++) {
@@ -108,7 +112,7 @@
 
 				// Attaching a click event to the current marker
 				google.maps.event.addListener(marker, "click", function(e) {
-					infoWindow.setContent(data.city);
+					infoWindow.setContent(contentString);
 					infoWindow.open(map, marker);
 				});
 
@@ -144,7 +148,15 @@
 
 })();
 
-
+$(document).ready(function() {
+    $.getJSON("http://ws.audioscrobbler.com/2.0/?method=user.getToptracks&user=Essychu&api_key=6df5baf8c242a7d5eef05774443864a3&limit=10&format=json&callback=?", function(json) {
+        var html = '';
+        $.each(json.toptracks.track, function(i, item) {
+            html += "<p><a href=" + item.url + " target='_blank'>" + item.name + " - " + "Play count : " +item.playcount + "</a></p>";
+        });
+        $('#andrew-top').append(html);
+    });
+});
 /*
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 	infoWindow.setPosition(pos);
