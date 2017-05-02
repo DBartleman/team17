@@ -170,21 +170,7 @@ var contentString = "hello world";
 
 })();
 
-<<<<<<< Updated upstream:js/event.js
-$(document).ready(function() {
-    $.getJSON("http://ws.audioscrobbler.com/2.0/?method=user.getToptracks&user=Essychu&api_key=6df5baf8c242a7d5eef05774443864a3&limit=10&format=json&callback=?", function(json) {
-        var html = '';
-        $.each(json.toptracks.track, function(i, item) {
-            html += "<p><a href=" + item.url + " target='_blank'>" + item.name + " - " + "Play count : " +item.playcount + "</a></p>";
-            console.log("Jquery loop executed");
-        });
-        $('#andrew-top').append(html);
-        console.log("append html");
-    });
-});
-=======
 
->>>>>>> Stashed changes:css/js/event.js
 /*
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 	infoWindow.setPosition(pos);
