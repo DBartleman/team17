@@ -6,7 +6,7 @@ $(document).ready(function() {
         });
         $('#andrew-top').append(html);
     }); /*
-		$.getJSON('http://ws.audioscrobbler.com/2.0/?method=user.getToptracks&user=Essychu&api_key=6df5baf8c242a7d5eef05774443864a3&limit=10&format=json&callback=?', function(data) {
+		$.getJSON('https://ws.audioscrobbler.com/2.0/?method=user.getToptracks&user=Essychu&api_key=6df5baf8c242a7d5eef05774443864a3&limit=10&format=json&callback=?', function(data) {
     *///data is the JSON string
 		console.log(data);
 });
@@ -40,7 +40,7 @@ $(document).ready(function() {
 						lng: position.coords.longitude
 					};
 					infoWindow.setPosition(pos);
-					infoWindow.setContent('i see you.');
+					infoWindow.setContent('You are here.');
 					infoWindow.open(map);
 					map.setCenter(pos);
 				}, function() {
@@ -62,7 +62,7 @@ $(document).ready(function() {
 		        "lng": -87.629,
             "artist": "Lady Gaga",
             "listeners": 3603012,
-		        "description": "http://ws.audioscrobbler.com/2.0/?method=chart.gettopartists&api_key=YOUR_API_KEY&format=json"
+		        "description": "https://ws.audioscrobbler.com/2.0/?method=chart.gettopartists&api_key=YOUR_API_KEY&format=json"
 		    },
 		    {
 		        "city": "Los Angeles, CA",
@@ -240,7 +240,7 @@ var contentString = "hello world";
 			// Creating a closure to retain the correct data, notice how I pass the current data in the loop into the closure (marker, data)
 			(function(marker, data) {
 				var andrewHtml = '';
-			    $.getJSON("http://ws.audioscrobbler.com/2.0/?method=user.getToptracks&user=Essychu&api_key=6df5baf8c242a7d5eef05774443864a3&limit=5&format=json&callback=?", function(json) {
+			    $.getJSON("https://ws.audioscrobbler.com/2.0/?method=user.getToptracks&user=Essychu&api_key=6df5baf8c242a7d5eef05774443864a3&limit=5&format=json&callback=?", function(json) {
 			        $.each(json.toptracks.track, function(i, item) {
 			            andrewHtml += "<p><a href=" + item.url + " target='_blank'>" + item.name + " - " + "Play count : " +item.playcount + "</a></p>";
 			        });
