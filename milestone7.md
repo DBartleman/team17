@@ -5,7 +5,7 @@
 * Cynthia Hong: Bubble functionality / Grayscale map implementation 
 * Christopher (Tyler) Sorensen: Bubble functionality / grayscale map implementation
 ###### Screenshots of Core Map Functionality:
-
+![Screenshot](https://raw.githubusercontent.com/SpiritRushAhri/team17/master/img/m7.jpg "Screenshot of Updated bubbles")
 
 Description of feature:
-It now displays the users top 5 played tracks and for other areas it displays a top artist/song. It does this above the bubble where as before we only had it show up down the page off the map.
+It now displays the users top 5 played tracks and for other areas it displays a top artist/song. It does this above the bubble where as before we only had it show up down the page off the map. The songs that appear are clickable and take you to the artist/song page.
