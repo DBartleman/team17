@@ -60,47 +60,155 @@ $(document).ready(function() {
 		        "city": "Chicago, IL",
 		        "lat": 41.878,
 		        "lng": -87.629,
-						"artist": " ",
+            "artist": "Lady Gaga",
+            "listeners": 3603012,
 		        "description": "http://ws.audioscrobbler.com/2.0/?method=chart.gettopartists&api_key=YOUR_API_KEY&format=json"
 		    },
 		    {
 		        "city": "Los Angeles, CA",
 		        "lat": 34.052,
 		        "lng": -118.243,
+            "artist": "Katy Perry",
+            "listeners": 3547124,
 		        "description": "blank"
 		    },
 		    {
 		        "city": "San Diego, CA",
 		        "lat": 32.8801,
 		        "lng": -117.2340,
+            "artist": "Justin Timberlake",
+            "listeners": 2646775,
 		        "description": "blank"
 		    },
 				{
 						"city": "New York, NY",
 						"lat": 40.714,
 						"lng": -74.005,
+            "artist": "Kelly Clarkson",
+            "listeners": 2284482,
 						"description": "blank"
-				}
+				},
+        {
+            "city": "San Francisco, CA",
+            "lat": 37.773972,
+            "lng":  -122.431297,
+            "artist": "Coldplay",
+            "listeners": 5184204,
+            "description": "blank"
+        },
+        {
+            "city": "Miami, FL",
+            "lat": 25.761681,
+            "lng": -80.191788,
+            "artist": "Fergie",
+            "listeners": 1713443,
+            "description": "blank"
+        },
+        {
+            "city": "Austin, TX",
+            "lat": 30.307182,
+            "lng": -97.755996,
+            "artist": "Backstreet Boys",
+            "listeners": 1277381
+        },
+        {
+            "city": "Kansas City, MO",
+            "lat": 39.114171,
+            "lng": -94.627457,
+            "artist": "Taylor Swift",
+            "listeners": 1940646
+        },
+        {
+            "city": "Washington, DC, USA",
+            "lat": 38.889931,
+            "lng": -77.009003,
+            "artist": "Alicia Keys",
+            "listeners": 2209946
+        },
+        {
+            "city": "Atlanta, GA",
+            "lat": 33.7490,
+            "lng": -84.3880,
+            "artist": "Janet Jackson",
+            "listeners": 1216405
+        },
+        {
+            "city": "Seattle, WA",
+            "lat": 47.6062,
+            "lng": -122.3321,
+            "artist": "Bruno Mars",
+            "listeners": 1629847
+        },
+        {
+            "city": "Denver, CO",
+            "lat": 39.7392,
+            "lng": -104.9903,
+            "artist": "Michelle Branch",
+            "listeners": 739935
+        },
+        {
+            "city": "Las Vegas, NV",
+            "lat": 36.1699,
+            "lng": -115.1398,
+            "artist": "Michael Buble",
+            "listeners": 1692724
+        }
 		]
 
 
 		var citymap = {
 			chicago: {
 				center: {lat: 41.878, lng: -87.629},
-				population: 2714856
+				listens: 3603012
 			},
 			losangeles: {
 				center: {lat: 34.052, lng: -118.243},
-				population: 3857799
+				listens: 3547124
 			},
 			sandiego: {
 			  center: {lat: 32.8801, lng: -117.2340},
-				population: 603502
+				listens: 2646775
 			},
 			newyork: {
 				center: {lat: 40.714, lng: -74.005},
-				population: 8405837
-			}
+				listens: 2284482
+			},
+      sanfrancisco:{
+        center: {lat: 37.773972, lng:  -122.431297},
+        listens: 5184204
+      },
+      miami:{
+        center: {lat: 25.761681, lng: -80.191788},
+        listens: 1713443
+      },
+      austin:{
+        center: {lat: 30.307182, lng: -97.755996},
+        listens: 1277381
+      },
+      kansascity:{
+        center: {lat: 39.114171, lng: -94.627457},
+        listens: 1940646
+      },
+      washingtondc:{
+        center: {lat: 38.889931, lng: -77.009003},
+        listens: 2209946
+      },
+      atlanta:{
+        center: {lat: 33.7490, lng: -84.3880},
+        listens: 1216405
+      },
+      seattle:{
+        center: {lat: 47.6062, lng: -122.3321},
+        listens: 1629847
+      },
+      denver:{
+        center: {lat: 39.7392, lng: -104.9903},
+        listens: 739935
+      },
+      lasvegas:{
+        center: {lat: 36.1699, lng: -115.1398},
+        listens: 1692724
+      }
 		};
 
 
@@ -115,7 +223,7 @@ var contentString = "hello world";
 
 		// Looping through the JSON data
 		for (var i = 0, length = json.length; i < length; i++) {
-			console.log(json.length);
+
 			var data = json[i],
 				latLng = new google.maps.LatLng(data.lat, data.lng);
 
@@ -144,9 +252,13 @@ var contentString = "hello world";
 						infoWindow.open(map, marker);
 					}
 					if (data.city == "Los Angeles, CA") {
-						infoWindow.setContent(andrewHtml);
+						infoWindow.setContent("<div class=info-box><h2> Andrew's Top Tracks</h2>" + andrewHtml);
 						infoWindow.open(map, marker);
 					}
+          else{
+					infoWindow.setContent('<div class="info-box"><h2>' + data.city + '</h2>'+ data.artist + '</br>' + data.listeners + " listeners");
+					infoWindow.open(map, marker, contentString);
+        }
 				});
 
 			})(marker, data);
@@ -169,7 +281,7 @@ var contentString = "hello world";
 				map: map,
 				center: citymap[city].center,
 				clickable: true,
-				radius: Math.sqrt(citymap[city].population) * 100
+				radius: Math.sqrt(citymap[city].listens) * 100
 			});
 		}
 		cityCircle.bindTo('center',marker,'position');
