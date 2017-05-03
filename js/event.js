@@ -131,13 +131,23 @@ var contentString = "hello world";
 
 			// Creating a closure to retain the correct data, notice how I pass the current data in the loop into the closure (marker, data)
 			(function(marker, data) {
-
+				var andrewHtml = '';
+			    $.getJSON("http://ws.audioscrobbler.com/2.0/?method=user.getToptracks&user=Essychu&api_key=6df5baf8c242a7d5eef05774443864a3&limit=5&format=json&callback=?", function(json) {
+			        $.each(json.toptracks.track, function(i, item) {
+			            andrewHtml += "<p><a href=" + item.url + " target='_blank'>" + item.name + " - " + "Play count : " +item.playcount + "</a></p>";
+			        });
+			    });
 				// Attaching a click event to the current marker
 				google.maps.event.addListener(marker, "click", function(e) {
-					infoWindow.setContent(data.city + data.artist);
-					infoWindow.open(map, marker, contentString);
+					if (data.city == "Chicago, IL") {
+						infoWindow.setContent("chicagoooooo");
+						infoWindow.open(map, marker);
+					}
+					if (data.city == "Los Angeles, CA") {
+						infoWindow.setContent(andrewHtml);
+						infoWindow.open(map, marker);
+					}
 				});
-
 
 			})(marker, data);
 
