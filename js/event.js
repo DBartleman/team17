@@ -21,8 +21,8 @@ $(document).ready(function() {
 			map = new google.maps.Map(document.getElementById('map'), {
 				/*
 				center: {lat: 32.8801, lng: -117.2340} */
-				center: {lat:39, lng:-95},
-				zoom: 4,
+				center: {lat:32.8801, lng:-117.2340},
+				zoom: 15,
 				scrollwheel: false,
 				// How you would like to style the map.
 				// This is where you would paste any style found on Snazzy Maps.
@@ -56,7 +56,7 @@ $(document).ready(function() {
 
 		// Creating the JSON data
 		var json = [
-		    {
+/*		    {
 		        "city": "Chicago, IL",
 		        "lat": 41.878,
 		        "lng": -87.629,
@@ -71,7 +71,7 @@ $(document).ready(function() {
             "artist": "Katy Perry",
             "listeners": 3547124,
 		        "description": "blank"
-		    },
+		    },*/
 		    {
 		        "city": "San Diego, CA",
 		        "lat": 32.8801,
@@ -79,7 +79,7 @@ $(document).ready(function() {
             "artist": "Justin Timberlake",
             "listeners": 2646775,
 		        "description": "blank"
-		    },
+		    } /*,
 				{
 						"city": "New York, NY",
 						"lat": 40.714,
@@ -152,11 +152,12 @@ $(document).ready(function() {
             "lng": -115.1398,
             "artist": "Michael Buble",
             "listeners": 1692724
-        }
+        }*/
 		]
 
 
 		var citymap = {
+      /*
 			chicago: {
 				center: {lat: 41.878, lng: -87.629},
 				listens: 3603012
@@ -164,11 +165,11 @@ $(document).ready(function() {
 			losangeles: {
 				center: {lat: 34.052, lng: -118.243},
 				listens: 3547124
-			},
+			},*/
 			sandiego: {
 			  center: {lat: 32.8801, lng: -117.2340},
 				listens: 2646775
-			},
+			} /*,
 			newyork: {
 				center: {lat: 40.714, lng: -74.005},
 				listens: 2284482
@@ -208,7 +209,7 @@ $(document).ready(function() {
       lasvegas:{
         center: {lat: 36.1699, lng: -115.1398},
         listens: 1692724
-      }
+      }*/
 		};
 
 
@@ -281,7 +282,7 @@ var contentString = "hello world";
 				map: map,
 				center: citymap[city].center,
 				clickable: true,
-				radius: Math.sqrt(citymap[city].listens) * 100
+				radius: Math.sqrt(citymap[city].listens) * 1
 			});
 		}
 		cityCircle.bindTo('center',marker,'position');
