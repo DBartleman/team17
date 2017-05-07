@@ -1,3 +1,14 @@
+/*
+
+users:
+https://www.last.fm/user/cheshire-fox
+
+
+
+
+*/
+
+
 $(document).ready(function() {
     $.getJSON("https://ws.audioscrobbler.com/2.0/?method=user.getToptracks&user=Essychu&api_key=6df5baf8c242a7d5eef05774443864a3&limit=10&format=json&callback=?", function(json) {
         var html = '';
@@ -27,9 +38,8 @@ $(document).ready(function() {
 				// How you would like to style the map.
 				// This is where you would paste any style found on Snazzy Maps.
 				// https://snazzymaps.com/style/15/subtle-grayscale
-				styles: [{"featureType":"administrative","elementType":"all","stylers":[{"saturation":"-100"}]},{"featureType":"administrative.province","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"landscape","elementType":"all","stylers":[{"saturation":-100},{"lightness":65},{"visibility":"on"}]},{"featureType":"poi","elementType":"all","stylers":[{"saturation":-100},{"lightness":"50"},{"visibility":"simplified"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":"-100"}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"all","stylers":[{"lightness":"30"}]},{"featureType":"road.local","elementType":"all","stylers":[{"lightness":"40"}]},{"featureType":"transit","elementType":"all","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffff00"},{"lightness":-25},{"saturation":-97}]},{"featureType":"water","elementType":"labels","stylers":[{"lightness":-25},{"saturation":-100}]}]
-
-			});
+        styles: [{"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#000000"},{"lightness":40}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"lightness":16}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":17},{"weight":1.2}]},{"featureType":"administrative","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"administrative.country","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"administrative.country","elementType":"geometry","stylers":[{"visibility":"simplified"}]},{"featureType":"administrative.country","elementType":"labels.text","stylers":[{"visibility":"simplified"}]},{"featureType":"administrative.province","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"administrative.locality","elementType":"all","stylers":[{"visibility":"simplified"},{"saturation":"-100"},{"lightness":"30"}]},{"featureType":"administrative.neighborhood","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"administrative.land_parcel","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"landscape","elementType":"all","stylers":[{"visibility":"simplified"},{"gamma":"0.00"},{"lightness":"74"}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"landscape.man_made","elementType":"all","stylers":[{"lightness":"3"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":21}]},{"featureType":"road","elementType":"geometry","stylers":[{"visibility":"simplified"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":16}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":19}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":17}]}]
+      });
 
 			infoWindow = new google.maps.InfoWindow;
 			// Try HTML5 geolocation.
@@ -39,6 +49,13 @@ $(document).ready(function() {
 						lat: position.coords.latitude,
 						lng: position.coords.longitude
 					};
+
+          var marker = new google.maps.Marker({
+          position: pos,
+          map: map,
+          icon: 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png'
+          });
+
 					infoWindow.setPosition(pos);
 					infoWindow.setContent('You are here.');
 					infoWindow.open(map);
@@ -168,7 +185,7 @@ $(document).ready(function() {
 			},*/
 			sandiego: {
 			  center: {lat: 32.8801, lng: -117.2340},
-				listens: 2646775
+				listens: 1
 			} /*,
 			newyork: {
 				center: {lat: 40.714, lng: -74.005},
@@ -234,7 +251,8 @@ var contentString = "hello world";
 				var marker = new google.maps.Marker({
 					position: latLng,
 					map: map,
-					title: city
+					title: city,
+          icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
 				});
 
 
@@ -246,13 +264,14 @@ var contentString = "hello world";
 			            andrewHtml += "<p><a href=" + item.url + " target='_blank'>" + item.name + " - " + "Play count : " +item.playcount + "</a></p>";
 			        });
 			    });
+
 				// Attaching a click event to the current marker
 				google.maps.event.addListener(marker, "click", function(e) {
 					if (data.city == "Chicago, IL") {
 						infoWindow.setContent("chicagoooooo");
 						infoWindow.open(map, marker);
 					}
-					if (data.city == "Los Angeles, CA") {
+					if (data.city == "San Diego, CA") {
 						infoWindow.setContent("<div class=info-box><h2> Andrew's Top Tracks</h2>" + andrewHtml);
 						infoWindow.open(map, marker);
 					}
@@ -271,7 +290,6 @@ var contentString = "hello world";
 
 			console.log(city);
 
-
 			// Add the circle for this city to the map.
 			var cityCircle = new google.maps.Circle({
 				strokeColor: '#FF0000',
@@ -282,7 +300,7 @@ var contentString = "hello world";
 				map: map,
 				center: citymap[city].center,
 				clickable: true,
-				radius: Math.sqrt(citymap[city].listens) * 1
+				radius: 1609.34
 			});
 		}
 		cityCircle.bindTo('center',marker,'position');
@@ -292,6 +310,7 @@ var contentString = "hello world";
 	}
 
 })();
+
 
 
 /*
