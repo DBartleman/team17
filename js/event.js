@@ -2,7 +2,10 @@
 
 users:
 https://www.last.fm/user/cheshire-fox
-
+https://www.last.fm/user/yelling-at-cats
+https://www.last.fm/user/Luftroehren-Joe
+https://www.last.fm/user/Red-Rog
+https://www.last.fm/user/Hot-Dog
 
 
 
@@ -42,6 +45,8 @@ $(document).ready(function() {
       });
 
 			infoWindow = new google.maps.InfoWindow;
+
+
 			// Try HTML5 geolocation.
 			if (navigator.geolocation) {
 				navigator.geolocation.getCurrentPosition(function(position) {
@@ -56,8 +61,24 @@ $(document).ready(function() {
           icon: 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png'
           });
 
+
+          // Add the circle with a radius of 1 mile to the current location.
+    			var circle = new google.maps.Circle({
+    				strokeColor: '#FF0000',
+    				strokeOpacity: 0.8,
+    				strokeWeight: 2,
+    				fillColor: '#FF0000',
+    				fillOpacity: 0.35,
+    				map: map,
+    				center: pos,
+    				clickable: true,
+    				radius: 1609.34
+    			});
+
+          circle.bindTo(marker);
+
+          infoWindow.setContent('You are here.');
 					infoWindow.setPosition(pos);
-					infoWindow.setContent('You are here.');
 					infoWindow.open(map);
 					map.setCenter(pos);
 				}, function() {
@@ -248,7 +269,7 @@ var contentString = "hello world";
 
 
 				// Creating a marker and putting it on the map
-				var marker = new google.maps.Marker({
+				var markers = new google.maps.Marker({
 					position: latLng,
 					map: map,
 					title: city,
@@ -257,7 +278,7 @@ var contentString = "hello world";
 
 
 			// Creating a closure to retain the correct data, notice how I pass the current data in the loop into the closure (marker, data)
-			(function(marker, data) {
+			(function(markers, data) {
 				var andrewHtml = '';
 			    $.getJSON("https://ws.audioscrobbler.com/2.0/?method=user.getToptracks&user=Essychu&api_key=6df5baf8c242a7d5eef05774443864a3&limit=5&format=json&callback=?", function(json) {
 			        $.each(json.toptracks.track, function(i, item) {
@@ -266,22 +287,22 @@ var contentString = "hello world";
 			    });
 
 				// Attaching a click event to the current marker
-				google.maps.event.addListener(marker, "click", function(e) {
+				google.maps.event.addListener(markers, "click", function(e) {
 					if (data.city == "Chicago, IL") {
 						infoWindow.setContent("chicagoooooo");
-						infoWindow.open(map, marker);
+						infoWindow.open(map, markers);
 					}
 					if (data.city == "San Diego, CA") {
 						infoWindow.setContent("<div class=info-box><h2> Andrew's Top Tracks</h2>" + andrewHtml);
-						infoWindow.open(map, marker);
+						infoWindow.open(map, markers);
 					}
           else{
 					infoWindow.setContent('<div class="info-box"><h2>' + data.city + '</h2>'+ data.artist + '</br>' + data.listeners + " listeners");
-					infoWindow.open(map, marker, contentString);
+					infoWindow.open(map, markers, contentString);
         }
 				});
 
-			})(marker, data);
+			})(markers, data);
 
 		}
 		// Construct the circle for each value in citymap.
@@ -291,7 +312,7 @@ var contentString = "hello world";
 			console.log(city);
 
 			// Add the circle for this city to the map.
-			var cityCircle = new google.maps.Circle({
+	/*		var cityCircle = new google.maps.Circle({
 				strokeColor: '#FF0000',
 				strokeOpacity: 0.8,
 				strokeWeight: 2,
@@ -301,9 +322,9 @@ var contentString = "hello world";
 				center: citymap[city].center,
 				clickable: true,
 				radius: 1609.34
-			});
+			}); */
 		}
-		cityCircle.bindTo('center',marker,'position');
+		cityCircle.bindTo('center',markers,'position');
     console.log(citymap[city].center);
 
 
