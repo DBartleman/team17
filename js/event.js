@@ -362,6 +362,7 @@ var contentString = "hello world";
 
 
 	}
+/*
   function small() {
     smallCircle.setMap(map);
     mediumCircle.setMap(null);
@@ -378,7 +379,7 @@ var contentString = "hello world";
     largeCircle.setMap(map);
     smallCircle.setMap(null);
     mediumCircle.setMap(null);
-  }
+  } */
 })();
 
 
