@@ -13,6 +13,7 @@ https://www.last.fm/user/Hot-Dog
 
 
 $(document).ready(function() {
+
     $.getJSON("https://ws.audioscrobbler.com/2.0/?method=user.getToptracks&user=Essychu&api_key=6df5baf8c242a7d5eef05774443864a3&limit=10&format=json&callback=?", function(json) {
         var html = '';
         $.each(json.toptracks.track, function(i, item) {
@@ -23,6 +24,7 @@ $(document).ready(function() {
 		$.getJSON('https://ws.audioscrobbler.com/2.0/?method=user.getToptracks&user=Essychu&api_key=6df5baf8c242a7d5eef05774443864a3&limit=10&format=json&callback=?', function(data) {
     *///data is the JSON string
 		console.log(data);
+
 });
 
 
@@ -63,19 +65,48 @@ $(document).ready(function() {
 
 
           // Add the circle with a radius of 1 mile to the current location.
-    			var circle = new google.maps.Circle({
+    			var largeCircle = new google.maps.Circle({
     				strokeColor: '#FF0000',
     				strokeOpacity: 0.8,
-    				strokeWeight: 2,
+    				strokeWeight: 4, /*
     				fillColor: '#FF0000',
-    				fillOpacity: 0.35,
+    				fillOpacity: 0.35,*/
     				map: map,
     				center: pos,
     				clickable: true,
     				radius: 1609.34
     			});
 
-          circle.bindTo(marker);
+          // Add the circle with a radius of 1 mile to the current location.
+    			var mediumCircle = new google.maps.Circle({
+    				strokeColor: '#FF0000',
+    				strokeOpacity: 0.8,
+    				strokeWeight: 3, /*
+    				fillColor: '#FF0000',
+    				fillOpacity: 0.35,*/
+    				map: map,
+    				center: pos,
+    				clickable: true,
+    				radius: 965.606
+    			});
+
+
+          // Add the circle with a radius of 1 mile to the current location.
+    			var smallCircle = new google.maps.Circle({
+    				strokeColor: '#FF0000',
+    				strokeOpacity: 0.8,
+    				strokeWeight: 2, /*
+    				fillColor: '#FF0000',
+    				fillOpacity: 0.35,*/
+    				map: map,
+    				center: pos,
+    				clickable: true,
+    				radius: 482.803
+    			});
+
+          largeCircle.bindTo(marker);
+          mediumCircle.bindTo(marker);
+          smallCircle.bindTo(marker);
 
           infoWindow.setContent('You are here.');
 					infoWindow.setPosition(pos);
@@ -88,6 +119,7 @@ $(document).ready(function() {
 				// Browser doesn't support Geolocation
 				handleLocationError(false, infoWindow, map.getCenter());
 			}
+
 
 
 
@@ -304,6 +336,7 @@ var contentString = "hello world";
 
 			})(markers, data);
 
+
 		}
 		// Construct the circle for each value in citymap.
 		// Note: We scale the area of the circle based on the population.
@@ -324,13 +357,31 @@ var contentString = "hello world";
 				radius: 1609.34
 			}); */
 		}
-		cityCircle.bindTo('center',markers,'position');
+		/*cityCircle.bindTo('center',markers,'position'); */
     console.log(citymap[city].center);
 
 
 	}
+  function small() {
+    smallCircle.setMap(map);
+    mediumCircle.setMap(null);
+    largeCircle.setMap(null);
+  }
 
+  function medium() {
+    mediumCircle.setMap(map);
+    smallCircle.setMap(null);
+    largeCircle.setMap(null);
+  }
+
+  function large(){
+    largeCircle.setMap(map);
+    smallCircle.setMap(null);
+    mediumCircle.setMap(null);
+  }
 })();
+
+
 
 
 

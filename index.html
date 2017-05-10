@@ -84,6 +84,13 @@ var lastfm = new LastFM({
     </nav>
 
     <div id="map"></div>
+
+    <div id="floating-panel">
+      <input onclick="small();" type=button value="0.3 Mile">
+      <input onclick="medium();" type=button value="0.6 Mile">
+      <input onclick="large();" type=button value="1 Mile">
+    </div>
+
         <div class = "col-sm-12 text-center" id="andrew-top">
           <!-- Maps javascript -->
           <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3jzZQx9KgOlNtQ9tDU2ty0BIYcC5mwGk&callback=initMap">
