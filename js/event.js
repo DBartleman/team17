@@ -59,7 +59,7 @@ $(document).ready(function() {
           var marker = new google.maps.Marker({
           position: pos,
           map: map,
-          icon: 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png'
+          icon: 'https://maps.google.com/mapfiles/ms/icons/yellow-dot.png'
           });
 
 
@@ -304,10 +304,10 @@ var contentString = "hello world";
 					position: latLng,
 					map: map,
 					title: city,
-          icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
+          icon: 'https://maps.google.com/mapfiles/ms/icons/green-dot.png'
 				});
 
-
+ 
 			// Creating a closure to retain the correct data, notice how I pass the current data in the loop into the closure (marker, data)
 			(function(markers, data) {
 				var andrewHtml = '';
@@ -338,6 +338,7 @@ var contentString = "hello world";
 
 		}
         
+        //Cynthia's last.fm pin
                for (var i = 0, length = json.length; i < length; i++) {
 
 			var data = json[i],
@@ -353,7 +354,7 @@ var contentString = "hello world";
 					position: cynthialatLng,
 					map: map,
 					title: city,
-          icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
+          icon: 'https://maps.google.com/mapfiles/ms/icons/green-dot.png'
 				});
 
 
@@ -386,6 +387,7 @@ var contentString = "hello world";
 
 		}
         
+        //tyler's last.fm pin
         for (var i = 0, length = json.length; i < length; i++) {
 
 			var data = json[i],
@@ -401,7 +403,7 @@ var contentString = "hello world";
 					position: tylerlatLng,
 					map: map,
 					title: city,
-          icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
+          icon: 'https://maps.google.com/mapfiles/ms/icons/green-dot.png'
 				});
 
 
