@@ -1,15 +1,3 @@
-/*
-
-users:
-https://www.last.fm/user/cheshire-fox
-https://www.last.fm/user/yelling-at-cats
-https://www.last.fm/user/Luftroehren-Joe
-https://www.last.fm/user/Red-Rog
-https://www.last.fm/user/Hot-Dog
-
-
-
-*/
 
 
 $(document).ready(function() {
