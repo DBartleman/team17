@@ -23,7 +23,6 @@ $(document).ready(function() {
     }); /*
 		$.getJSON('https://ws.audioscrobbler.com/2.0/?method=user.getToptracks&user=Essychu&api_key=6df5baf8c242a7d5eef05774443864a3&limit=10&format=json&callback=?', function(data) {
     *///data is the JSON string
-		console.log(data);
 
 });
 

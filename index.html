@@ -40,7 +40,7 @@
      <link rel="stylesheet" href="css/index.css">
      <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
-     <script type="text/javascript" src="js/f.api.md5.js"></script>
+     <!--<script type="text/javascript" src="js/f.api.md5.js"></script>-->
      <script type="text/javascript" src="js/lastfm.api.js"></script>
      <script type="text/javascript" src="js/lastfm.api.cache.js"></script>
 
@@ -93,7 +93,8 @@ var lastfm = new LastFM({
 
         <div class = "col-sm-12 text-center" id="andrew-top">
           <!-- Maps javascript -->
-          <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3jzZQx9KgOlNtQ9tDU2ty0BIYcC5mwGk&callback=initMap">
+          <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3jzZQx9KgOlNtQ9tDU2ty0BIYcC5mwGk">
+              //commented out: &callback=initMap from end of maps api script for debugging. Don't think we have a callback function defined.
           </script>
           <center><h1> Andrew's Top Tracks </h1></center>
         </div>
@@ -322,6 +323,7 @@ var lastfm = new LastFM({
         $("#sidebar-wrapper").toggleClass("active");
     });
     // Scrolls to the selected menu item on the page
+    /* commenting out for debugging...
     $(function() {
         $('a[href*=#]:not([href=#],[data-toggle],[data-target],[data-slide])').click(function() {
             if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
@@ -336,6 +338,7 @@ var lastfm = new LastFM({
             }
         });
     });
+    */
     //#to-top button appears after scrolling
     var fixed = false;
     $(document).scroll(function() {
