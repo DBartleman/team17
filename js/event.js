@@ -337,6 +337,104 @@ var contentString = "hello world";
 
 
 		}
+        
+               for (var i = 0, length = json.length; i < length; i++) {
+
+			var data = json[i],
+				cynthialatLng = {
+                    lat: 32.8858961,
+                    lng: -117.2434672
+                }
+
+
+
+				// Creating a marker and putting it on the map
+				var markers = new google.maps.Marker({
+					position: cynthialatLng,
+					map: map,
+					title: city,
+          icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
+				});
+
+
+			// Creating a closure to retain the correct data, notice how I pass the current data in the loop into the closure (marker, data)
+			(function(markers, data) {
+				var cynthiaHTML = '';
+			    $.getJSON("https://ws.audioscrobbler.com/2.0/?method=user.getToptracks&user=cynthiahong&api_key=6df5baf8c242a7d5eef05774443864a3&limit=5&format=json&callback=?", function(json) {
+			        $.each(json.toptracks.track, function(i, item) {
+			            cynthiaHTML += "<p><a href=" + item.url + " target='_blank'>" + item.name + " - " + "Play count : " +item.playcount + "</a></p>";
+			        });
+			    });
+
+				// Attaching a click event to the current marker
+				google.maps.event.addListener(markers, "click", function(e) {
+					if (data.city == "Chicago, IL") {
+						infoWindow.setContent("chicagoooooo");
+						infoWindow.open(map, markers);
+					}
+					if (data.city == "San Diego, CA") {
+						infoWindow.setContent("<div class=info-box><h2> Cynthia's Top Tracks</h2>" + cynthiaHTML);
+						infoWindow.open(map, markers);
+					}
+          else{
+					infoWindow.setContent('<div class="info-box"><h2>' + data.city + '</h2>'+ data.artist + '</br>' + data.listeners + " listeners");
+					infoWindow.open(map, markers, contentString);
+        }
+				});
+
+			})(markers, data);
+
+		}
+        
+        for (var i = 0, length = json.length; i < length; i++) {
+
+			var data = json[i],
+				tylerlatLng = {
+                    lat: 32.8829164,
+                    lng: -117.2350471
+                }
+
+
+
+				// Creating a marker and putting it on the map
+				var markers = new google.maps.Marker({
+					position: tylerlatLng,
+					map: map,
+					title: city,
+          icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
+				});
+
+
+			// Creating a closure to retain the correct data, notice how I pass the current data in the loop into the closure (marker, data)
+			(function(markers, data) {
+				var tylerHtml = '';
+			    $.getJSON("https://ws.audioscrobbler.com/2.0/?method=user.getToptracks&user=ctsorensen&api_key=6df5baf8c242a7d5eef05774443864a3&limit=5&format=json&callback=?", function(json) {
+			        $.each(json.toptracks.track, function(i, item) {
+			            tylerHtml += "<p><a href=" + item.url + " target='_blank'>" + item.name + " - " + "Play count : " +item.playcount + "</a></p>";
+			        });
+			    });
+
+				// Attaching a click event to the current marker
+				google.maps.event.addListener(markers, "click", function(e) {
+					if (data.city == "Chicago, IL") {
+						infoWindow.setContent("chicagoooooo");
+						infoWindow.open(map, markers);
+					}
+					if (data.city == "San Diego, CA") {
+						infoWindow.setContent("<div class=info-box><h2> Tyler's Top Tracks</h2>" + tylerHtml);
+						infoWindow.open(map, markers);
+					}
+          else{
+					infoWindow.setContent('<div class="info-box"><h2>' + data.city + '</h2>'+ data.artist + '</br>' + data.listeners + " listeners");
+					infoWindow.open(map, markers, contentString);
+        }
+				});
+
+			})(markers, data);
+
+		}
+        
+        
 		// Construct the circle for each value in citymap.
 		// Note: We scale the area of the circle based on the population.
 		for (var city in citymap) {
