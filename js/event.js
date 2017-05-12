@@ -46,8 +46,8 @@ $(document).ready(function() {
 
           var locationTrackSearch = '';
           $.getJSON("http://ws.audioscrobbler.com/2.0/?method=track.search&track=San%20Diego&api_key=6df5baf8c242a7d5eef05774443864a3&limit=5&format=json&callback=?", function(json) {
-              $.each(json.results.track, function(i, item) {
-                  locationTrackSearch += "<p><a href=" + item.url + " target='_blank'>" + item.name + " - " + "Play count : " +item.playcount + "</a></p>";
+              $.each(json.results.trackmatches.track, function(i, item) {
+                  locationTrackSearch += "<p><a href=" + item.url + " target='_blank'>" + item.name + " - " +  item.artist + " - " + "Listeners : " + item.listeners + "</a></p>";
               });
           });
 
