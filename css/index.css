@@ -23,7 +23,8 @@ a, a:hover{
   font-size: 20px;
   cursor: pointer;
   color:#fff;
-  padding:10px 0px;
+  padding:20px;
+  margin: 0;
   font-weight:600;
   transition: all 0.7s;
   -webkit-transition: all 0.7s;
@@ -32,5 +33,12 @@ a, a:hover{
  }
 
  .fa{
+   transition: all .25s ease;
    float: right;
  }
+
+
+ .open {
+  transform: rotate(45deg);
+  transition: all .25s ease;
+}

@@ -79,6 +79,37 @@ function initMap() {
             				radius: 482.803
             			});
 
+                  // change smallCircle if you want markers on a different location
+                  // Getting the boundaries of the map
+                  var bounds = smallCircle.getBounds();
+
+                  // Getting the corners of the map
+                  var southWest = bounds.getSouthWest();
+                  var northEast = bounds.getNorthEast();
+
+                  // Calculating the distance from the top to the bottom of the map
+                  var latSpan = northEast.lat() - southWest.lat();
+
+                  // Calculating the distance from side to side
+                  var lngSpan = northEast.lng() - southWest.lng();
+
+                  // Creating a loop
+                  for (var i = 0; i < 7; i++) {
+
+                  // Creating a random position
+                  var lat = southWest.lat() + latSpan * Math.random();
+                  var lng = southWest.lng() + lngSpan * Math.random();
+                  var latlng = new google.maps.LatLng(lat, lng);
+
+                  // Adding a marker to the map
+                  new google.maps.Marker({
+                  position: latlng,
+                  map: map,                  
+                  icon: 'https://maps.google.com/mapfiles/ms/icons/green-dot.png'
+                  });
+                  console.log(i);
+                }
+
                   largeCircle.bindTo(marker);
                   mediumCircle.bindTo(marker);
                   smallCircle.bindTo(marker);
@@ -276,24 +307,8 @@ function initMap() {
 
 
         	}
-        /*
-          function small() {
-            smallCircle.setMap(map);
-            mediumCircle.setMap(null);
-            largeCircle.setMap(null);
-          }
 
-          function medium() {
-            mediumCircle.setMap(map);
-            smallCircle.setMap(null);
-            largeCircle.setMap(null);
-          }
-
-          function large(){
-            largeCircle.setMap(map);
-            smallCircle.setMap(null);
-            mediumCircle.setMap(null);
-          } */
+/* opens map in the accordian */
           initMap();
           $('#map').on('hidden.bs.collapse', function () {
             initMap();
@@ -301,3 +316,16 @@ function initMap() {
           $('#map').on('shown.bs.collapse', function () {
             initMap();
           })
+
+/* animation for the accordian */
+$(document).ready(function() {
+
+            $(".map-button").click(function(e){
+              $($(e.target).find('.fa.fa-plus').toggleClass('open'));
+            $(".accordian ul ul").slideUp();
+              if ($(this).next().is(":hidden")){
+              $(this).next().slideDown();
+              }
+            });
+
+          });
