@@ -1,10 +1,34 @@
 
+$(document).ready(function() {
+
+    $.getJSON("https://ws.audioscrobbler.com/2.0/?method=user.getToptracks&user=Essychu&api_key=6df5baf8c242a7d5eef05774443864a3&limit=10&format=json&callback=?", function(json) {
+        var html = '';
+        var counter = 0;
+        $.each(json.toptracks.track, function(i, item) {
+            if(counter == 10){
+                return false;
+            }
+            else{
+            html += "<h4><a href=" + item.url + " target='_blank'>" + item.name + " - " + "Play count : " +item.playcount + "</a></h4>";
+            counter++;
+            console.log(counter);
+            }
+            
+
+        });
+        $('#andrew-top').append(html);
+    }); /*
+		$.getJSON('https://ws.audioscrobbler.com/2.0/?method=user.getToptracks&user=Essychu&api_key=6df5baf8c242a7d5eef05774443864a3&limit=10&format=json&callback=?', function(data) {
+    *///data is the JSON string
+
+});
+
+
 var map;
 function initMap() {
   // Creating a new map
     map = new google.maps.Map(document.getElementById('map'), {
-      /*
-      center: {lat: 32.8801, lng: -117.2340} */
+        
       center: {lat:32.8801, lng:-117.2340},
       zoom: 15,
       scrollwheel: false,

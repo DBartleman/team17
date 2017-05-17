@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <link rel="stylesheet" href="css/index.css">
     <title>Trend - Music Discovery and Sharing</title>
-    <!-- Bootstrap Core CSS -->
+    <!-- Bootstrap C ore CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="css/stylish-portfolio.css" rel="stylesheet">
@@ -28,7 +28,7 @@
     //commented out: &callback=initMap from end of maps api script for debugging. Don't think we have a callback function </script>
 
 
-    <script type="text/javascript" src="js/event.js" defer> </script>
+    <script type="text/javascript" src="js/event.js"> </script>
      <script type="text/javascript" src="js/lastfm.api.js"></script>
      <script type="text/javascript" src="js/lastfm.api.cache.js"></script>
 
@@ -43,26 +43,67 @@ var lastfm = new LastFM({
 </head>
 
 <body>
-    <a class="map-button" data-toggle="collapse" data-target="#map"><span class="fa fa-plus"></span>View Map </a>
-    <div id="map" class="collapse ">
+<!--        <a class="map-button" data-toggle="collapse" data-target="#map"><span class="fa fa-plus"></span>View Map </a> -->
+        <div class = "col-sm-8">
+            <h1> <center>Trend - Music Discovery and Sharing</center> </h1>
+        </div>
+        <div id="map" class="col-sm-8">
+        </div>
+        <div class="col-sm-3" id="andrew-top">
+            <h2> Andrew's Top Tracks</h2> 
+        </div>
+        <div class = "col-sm-8">
+            <center><h3> Popular Songs of San Diego</h3></center>
+            <table class="table table-inverse">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Song</th>
+      <th>Artist</th>
+      <th>Location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Waves</td>
+      <td>Axero</td>
+      <td>San Diego</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Higher</td>
+      <td>Tobu</td>
+      <td>San Diego</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Windfall</td>
+      <td>TheFatRat</td>
+      <td>San Diego</td>
+    </tr>
+  </tbody>
+</table>
+        </div>
+         <div class = "col-sm-3" style='text-align:center;width:340px;height:204px;'><a href='http://www.mymusichabits.com/visualize/essychu'><img style='padding:28px 8px 16px 8px;' src='http://www.mymusichabits.com/resource/chart.php?username=essychu&color=0f4058&data=67,33&labels=67%25%20%20(28416)|33%25%20%20(13996)&type=website' alt='music listening habits'/></a>
+        </div>
+<!--         <a class="map-button" data-toggle="collapse" data-target="#bubbles"><span class="fa fa-plus"></span>My Bubbles</a>
+            <div id="bubbles" class="collapse">
+                <p>hello bubbles </p>
+            </div>
+        <!-- <a class="map-button" data-toggle="collapse" data-target="#andrew-top"><span class="fa fa-plus"></span>My Top Tracks</a>
+                <div id="andrew-top" class="collapse">
+                    <p>hello</p>
+                </div>
+        
 
-      </div>
-
-    <a class="map-button" data-toggle="collapse" data-target="#andrew-top"><span class="fa fa-plus"></span>My Top Tracks</a>
-    <div id="andrew-top" class="collapse">
-    <p>hello</p>
-    </div>
-
-   <a class="map-button" data-toggle="collapse" data-target="#bubbles"><span class="fa fa-plus"></span>My Bubbles</a>
-   <div id="bubbles" class="collapse">
-   <p>hello bubbles </p>
-   </div>
+  
 
    <a class="map-button" data-toggle="collapse" data-target="#stats"><span class="fa fa-plus"></span>My Stats</a>
    <div id="stats" class="collapse">
    <div style='text-align:center;width:340px;height:204px;border:1px solid #AAAAAA;'><a href='http://www.mymusichabits.com/visualize/essychu'><img style='border:0px;padding:8px 8px 16px 8px;' src='http://www.mymusichabits.com/resource/chart.php?username=essychu&color=0f4058&data=67,33&labels=67%25%20%20(28409)|33%25%20%20(13993)&type=website' alt='music listening habits'/></a><div style='background-color:F5F5F5;font-size:12px;padding:2px;border-top:1px solid #AAAAAA;'>Generated on May 15 2017 - <a href='http://www.mymusichabits.com/?ref=essychu'>My Music Habits</a></div></div>
    </div>
-
+-->
 <div id="lag"></div>
         <div class = "col-sm-12 text-center" id="andrew-top">
           <!-- Maps javascript
