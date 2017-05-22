@@ -9,7 +9,7 @@ $(document).ready(function() {
                 return false;
             }
             else{
-            html += "<h4><a href=" + item.url + " target='_blank'>" + item.name + " - " + "Play count : " +item.playcount + "</a></h4>";
+            html += "<h4><a href=" + item.url + " target='_blank'>" + item.name + " - " + "Play count : " +item.playcount + "</a></h4><hr>";
             counter++;
             console.log(counter);
             }
@@ -83,30 +83,30 @@ function initMap() {
 
 
                   // Add the circle with a radius of 1 mile to the current location.
-            			var largeCircle = new google.maps.Circle({
+            			/*var largeCircle = new google.maps.Circle({
             				strokeColor: '#FF0000',
             				strokeOpacity: 0.8,
             				strokeWeight: 4, /*
             				fillColor: '#FF0000',
-            				fillOpacity: 0.35,*/
+            				fillOpacity: 0.35,
             				map: map,
             				center: pos,
             				clickable: true,
             				radius: 1609.34
-            			});
+            			}); */
 
                   // Add the circle with a radius of 1 mile to the current location.
-            			var mediumCircle = new google.maps.Circle({
+            	/*		var mediumCircle = new google.maps.Circle({
             				strokeColor: '#FF0000',
             				strokeOpacity: 0.8,
             				strokeWeight: 3, /*
             				fillColor: '#FF0000',
-            				fillOpacity: 0.35,*/
+            				fillOpacity: 0.35,
             				map: map,
             				center: pos,
             				clickable: true,
             				radius: 965.606
-            			});
+            			}); */
 
 
                   // Add the circle with a radius of 1 mile to the current location.
@@ -115,11 +115,12 @@ function initMap() {
             				strokeOpacity: 0.8,
             				strokeWeight: 2, /*
             				fillColor: '#FF0000',
-            				fillOpacity: 0.35,*/
+            				fillOpacity: 0.35, */
             				map: map,
             				center: pos,
             				clickable: true,
-            				radius: 482.803
+            				radius: 482.803,
+                    editable: true
             			});
 
                   // change smallCircle if you want markers on a different location
@@ -153,7 +154,7 @@ function initMap() {
                   console.log(i);
                 }
 
-                  largeCircle.bindTo(marker);
+              /*    largeCircle.bindTo(marker); */
                   mediumCircle.bindTo(marker);
                   smallCircle.bindTo(marker);
 
