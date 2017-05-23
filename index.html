@@ -48,24 +48,29 @@ var lastfm = new LastFM({
             <h1> <center>Trend - Music Discovery and Sharing</center> </h1>
         </div>
         <div id="map" class="col-sm-8">
+
         </div>
         <div class="col-sm-3" id="andrew-top">
             <h2> Andrew's Top Tracks</h2>
         </div>
 
-        <div class = "col-sm-8">
+        <div class = "col-sm-8"> <!--
           <div class="table-popular">
-            <center><h3> Popular Songs of San Diego</h3></center>
-            <table class="table table-inverse">
-  <thead>
+            <center><h3> Popular Songs of San Diego</h3></center> -->
+            <table class="table table-popular table-inverse">
+  <thead id="legend-name">
+    <tr>
+      <th COLSPAN="4"><center><h3> Popular Songs of San Diego</h3></center></th>
+    </tr>
+  </thead>
     <tr>
       <th>#</th>
       <th>Song</th>
       <th>Artist</th>
       <th>Location</th>
     </tr>
-  </thead>
   <tbody>
+
     <tr>
       <th scope="row">1</th>
       <td>Waves</td>
@@ -87,6 +92,19 @@ var lastfm = new LastFM({
   </tbody>
 </table>
 </div>
+
+<table id="legend">
+  <tr>
+    <th id="legend-name">Legend</th>
+  </tr>
+  <tr>
+    <td id ="legend-items"> <img src="https://maps.google.com/mapfiles/ms/icons/yellow-dot.png"> Your Location</td>
+  </tr>
+  <tr>
+    <td id="legend-items"> <img src="https://maps.google.com/mapfiles/ms/icons/green-dot.png"> Other Listeners Around You</td>
+  </tr>
+</table>
+
         </div>
          <div class = "col-sm-3" style='text-align:center;width:340px;height:204px;'><a href='http://www.mymusichabits.com/visualize/essychu'><img style='padding:28px 8px 16px 8px;' src='http://www.mymusichabits.com/resource/chart.php?username=essychu&color=0f4058&data=67,33&labels=67%25%20%20(28416)|33%25%20%20(13996)&type=website' alt='music listening habits'/></a>
         </div>

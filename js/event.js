@@ -123,6 +123,7 @@ function initMap() {
                     editable: true
             			});
 
+
                   // change smallCircle if you want markers on a different location
                   // Getting the boundaries of the map
                   var bounds = smallCircle.getBounds();

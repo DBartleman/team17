@@ -80,6 +80,32 @@ h4{
   transition: all .25s ease;
 }
 
+#legend {
+  background: #fff;
+  padding: 10px;
+  margin: 20px;
+  border: 1px solid #000;
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(31,31,31,0.3);
+  -moz-box-shadow: 0px 0px 20px 0px rgba(31,31,31,0.3);
+  box-shadow: 0px 0px 20px 0px rgba(31,31,31,0.3);
+}
+
+#legend-name{
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #222;
+  color: white;
+  font-size: 22px;
+}
+
+#legend-items, #legend-name{
+  padding: 10px;
+}
+
+.table{
+  margin: 20px !important;
+}
+
 input[type=submit] {
   background-color: #222;
   color: white;
@@ -88,7 +114,6 @@ input[type=submit] {
   border: none;
   cursor: pointer;
 }
-
 
 input[type=text] {
   background-color: white;
