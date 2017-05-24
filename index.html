@@ -29,8 +29,9 @@
 
 
     <script type="text/javascript" src="js/event.js"> </script>
-     <script type="text/javascript" src="js/lastfm.api.js"></script>
-     <script type="text/javascript" src="js/lastfm.api.cache.js"></script>
+    <script type="text/javascript" src="js/getURL.js"> </script>
+    <script type="text/javascript" src="js/lastfm.api.js"></script>
+    <script type="text/javascript" src="js/lastfm.api.cache.js"></script>
 
 <script type="text/javascript">/* Create a LastFM object */
 var lastfm = new LastFM({
@@ -66,7 +67,10 @@ var lastfm = new LastFM({
 
 
         <div class="col-sm-3" id="andrew-top">
-            <h2> Andrew's Top Tracks</h2>
+          <h2><label id="lbltipAddedComment">Andrew's Top Tracks</label></h2>
+            <script type="text/javascript">
+              document.getElementById('lbltipAddedComment').innerHTML = getParameterByName('usernameValue') + "\'s Top Tracks";
+            </script>
         </div>
 
         <div class = "col-sm-8"> <!--
