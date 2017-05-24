@@ -3,7 +3,7 @@
 * Andrew Bartleman: worked on login functionality to display that users last.fm and their top tracks
 * Andrew Fancett: worked on login functionality to display that users last.fm and their top tracks
 * Cynthia Hong: Added legend box, simple styling to login page
-* Christopher (Tyler) Sorensen: Made circle radius expandable
+* Christopher (Tyler) Sorensen: Made circle radius expandable, debugging.
 ###### Screenshots
 
 ![Screenshot1](https://github.com/SpiritRushAhri/team17/blob/master/images/login12.PNG?raw=true "Login page")
