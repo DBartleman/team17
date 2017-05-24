@@ -50,19 +50,19 @@ function initMap() {
         };
 
                   var locationSearch = '';
-                  $.getJSON("http://ws.audioscrobbler.com/2.0/?method=track.search&track=San%20Diego&api_key=6df5baf8c242a7d5eef05774443864a3&limit=3&format=json&callback=?", function(json) {
+                  $.getJSON("https://ws.audioscrobbler.com/2.0/?method=track.search&track=San%20Diego&api_key=6df5baf8c242a7d5eef05774443864a3&limit=3&format=json&callback=?", function(json) {
                       locationSearch += "<h1>Tracks related to \"San Diego\":</h1>";
                       $.each(json.results.trackmatches.track, function(i, item) {
                           locationSearch += "<p><a href=" + item.url + " target='_blank'>" + item.name + " - " +  item.artist + "</a></p>";
                       });
                   });
-                  $.getJSON("http://ws.audioscrobbler.com/2.0/?method=artist.search&artist=San%20Diego&api_key=6df5baf8c242a7d5eef05774443864a3&limit=3&format=json&callback=?", function(json) {
+                  $.getJSON("https://ws.audioscrobbler.com/2.0/?method=artist.search&artist=San%20Diego&api_key=6df5baf8c242a7d5eef05774443864a3&limit=3&format=json&callback=?", function(json) {
                       locationSearch += "<h1>Artists related to \"San Diego\":</h1>";
                       $.each(json.results.artistmatches.artist, function(i, item) {
                           locationSearch += "<p><a href=" + item.url + " target='_blank'>" + item.name + " - " + "Listeners : " + item.listeners + "</a></p>";
                       });
                   });
-                  $.getJSON("http://ws.audioscrobbler.com/2.0/?method=album.search&album=San%20Diego&api_key=6df5baf8c242a7d5eef05774443864a3&limit=3&format=json&callback=?", function(json) {
+                  $.getJSON("https://ws.audioscrobbler.com/2.0/?method=album.search&album=San%20Diego&api_key=6df5baf8c242a7d5eef05774443864a3&limit=3&format=json&callback=?", function(json) {
                       locationSearch += "<h1>Albums related to \"San Diego\":</h1>";
                       $.each(json.results.albummatches.album, function(i, item) {
                           locationSearch += "<p><a href=" + item.url + " target='_blank'>" + item.name + " - " +  item.artist + "</a></p>";
@@ -156,7 +156,7 @@ function initMap() {
                 }
 
               /*    largeCircle.bindTo(marker); */
-                  mediumCircle.bindTo(marker);
+             //     mediumCircle.bindTo(marker);
                   smallCircle.bindTo(marker);
 
                   infoWindow.setContent('You are here.');
