@@ -1,7 +1,7 @@
 
 $(document).ready(function() {
 
-    $.getJSON("https://ws.audioscrobbler.com/2.0/?method=user.getToptracks&user=Essychu&api_key=6df5baf8c242a7d5eef05774443864a3&limit=10&format=json&callback=?", function(json) {
+    $.getJSON("https://ws.audioscrobbler.com/2.0/?method=user.getToptracks&user=" + getParameterByName('usernameValue') + "&api_key=6df5baf8c242a7d5eef05774443864a3&limit=10&format=json&callback=?", function(json) {
         var html = '';
         var counter = 0;
         $.each(json.toptracks.track, function(i, item) {
@@ -354,23 +354,33 @@ function initMap() {
         	}
 
 /* opens map in the accordian */
-          initMap();
-          $('#map').on('hidden.bs.collapse', function () {
-            initMap();
-          })
-          $('#map').on('shown.bs.collapse', function () {
-            initMap();
-          })
+initMap();
+$('#map').on('hidden.bs.collapse', function () {
+  initMap();
+})
+$('#map').on('shown.bs.collapse', function () {
+  initMap();
+})
+
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
 
 /* animation for the accordian */
 $(document).ready(function() {
 
-            $(".map-button").click(function(e){
-              $($(e.target).find('.fa.fa-plus').toggleClass('open'));
-            $(".accordian ul ul").slideUp();
-              if ($(this).next().is(":hidden")){
-              $(this).next().slideDown();
-              }
-            });
+$(".map-button").click(function(e){
+  $($(e.target).find('.fa.fa-plus').toggleClass('open'));
+$(".accordian ul ul").slideUp();
+  if ($(this).next().is(":hidden")){
+  $(this).next().slideDown();
+  }
+});
 
-          });
+});
