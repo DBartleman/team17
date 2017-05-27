@@ -35,7 +35,7 @@ function initMap() {
       // How you would like to style the map.
       // This is where you would paste any style found on Snazzy Maps.
       // https://snazzymaps.com/style/15/subtle-grayscale
-      styles: [{"featureType":"administrative","elementType":"all","stylers":[{"saturation":"-100"}]},{"featureType":"administrative.province","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"landscape","elementType":"all","stylers":[{"saturation":-100},{"lightness":65},{"visibility":"on"}]},{"featureType":"poi","elementType":"all","stylers":[{"saturation":-100},{"lightness":"50"},{"visibility":"simplified"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":"-100"}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"all","stylers":[{"lightness":"30"}]},{"featureType":"road.local","elementType":"all","stylers":[{"lightness":"40"}]},{"featureType":"transit","elementType":"all","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffff00"},{"lightness":-25},{"saturation":-97}]},{"featureType":"water","elementType":"labels","stylers":[{"lightness":-25},{"saturation":-100}]}]
+      styles: [{"featureType":"water","stylers":[{"saturation":43},{"lightness":-11},{"hue":"#0088ff"}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"hue":"#ff0000"},{"saturation":-100},{"lightness":99}]},{"featureType":"road","elementType":"geometry.stroke","stylers":[{"color":"#808080"},{"lightness":54}]},{"featureType":"landscape.man_made","elementType":"geometry.fill","stylers":[{"color":"#ece2d9"}]},{"featureType":"poi.park","elementType":"geometry.fill","stylers":[{"color":"#ccdca1"}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"color":"#767676"}]},{"featureType":"road","elementType":"labels.text.stroke","stylers":[{"color":"#ffffff"}]},{"featureType":"poi","stylers":[{"visibility":"off"}]},{"featureType":"landscape.natural","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#b8cb93"}]},{"featureType":"poi.park","stylers":[{"visibility":"on"}]},{"featureType":"poi.sports_complex","stylers":[{"visibility":"on"}]},{"featureType":"poi.medical","stylers":[{"visibility":"on"}]},{"featureType":"poi.business","stylers":[{"visibility":"simplified"}]}]
   });
 
     infoWindow = new google.maps.InfoWindow;
@@ -133,10 +133,10 @@ function initMap() {
                   var northEast = bounds.getNorthEast();
 
                   // Calculating the distance from the top to the bottom of the map
-                  var latSpan = northEast.lat() - southWest.lat();
+                  var latSpan = northEast.lat() - southWest.lat() - 0.003;
 
                   // Calculating the distance from side to side
-                  var lngSpan = northEast.lng() - southWest.lng();
+                  var lngSpan = northEast.lng() - southWest.lng() - 0.003;
 
                   // Creating a loop
                   for (var i = 0; i < 7; i++) {
@@ -144,6 +144,7 @@ function initMap() {
                   // Creating a random position
                   var lat = southWest.lat() + latSpan * Math.random();
                   var lng = southWest.lng() + lngSpan * Math.random();
+
                   var latlng = new google.maps.LatLng(lat, lng);
 
                   // Adding a marker to the map

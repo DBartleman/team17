@@ -29,7 +29,7 @@
 
 
     <script type="text/javascript" src="js/event.js"> </script>
-    
+
     <script type="text/javascript" src="js/lastfm.api.js"></script>
     <script type="text/javascript" src="js/lastfm.api.cache.js"></script>
 
@@ -44,15 +44,18 @@ var lastfm = new LastFM({
 </head>
 
 <body>
-  
+
 <!--        <a class="map-button" data-toggle="collapse" data-target="#map"><span class="fa fa-plus"></span>View Map </a> -->
-        <div class = "col-sm-8">
+
+        <div class="row">
+        <div class = "col-sm-12">
             <h1> <center>Trend - Music Discovery and Sharing</center> </h1>
         </div>
+      </div>
+
         <div id="map" class="col-sm-8">
-
         </div>
-
+        
         <table id="legend">
           <tr>
             <th id="legend-name">Legend</th>
@@ -66,6 +69,14 @@ var lastfm = new LastFM({
         </table>
 
 
+
+
+<div class="col-sm-8">
+  <div id="legend-name">
+    Popular Songs of San Diego
+  </div>
+        <iframe src="https://open.spotify.com/embed/user/thesoundsofspotify/playlist/2fZYvfo7EowvA9B8SQZb6M" width="700px" height="600px" frameborder="0" allowtransparency="true"></iframe>
+</div>
         <div class="col-sm-3" id="andrew-top">
           <h2><label id="lbltipAddedComment">Top Tracks</label></h2>
             <script type="text/javascript">
@@ -76,43 +87,9 @@ var lastfm = new LastFM({
         <div class = "col-sm-8"> <!--
           <div class="table-popular">
             <center><h3> Popular Songs of San Diego</h3></center> -->
-            <table class="table table-popular table-inverse">
-  <thead id="legend-name">
-    <tr>
-      <th COLSPAN="4"><center><h3> Popular Songs of San Diego</h3></center></th>
-    </tr>
-  </thead>
-    <tr>
-      <th>#</th>
-      <th>Song</th>
-      <th>Artist</th>
-      <th>Location</th>
-    </tr>
-  <tbody>
 
-    <tr>
-      <th scope="row">1</th>
-      <td>Waves</td>
-      <td>Axero</td>
-      <td>San Diego</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Higher</td>
-      <td>Tobu</td>
-      <td>San Diego</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Windfall</td>
-      <td>TheFatRat</td>
-      <td>San Diego</td>
-    </tr>
-  </tbody>
-</table>
 </div>
 
-        </div>
          <div class = "col-sm-3" style='text-align:center;width:340px;height:204px;'><a href='http://www.mymusichabits.com/visualize/essychu'><img style='padding:28px 8px 16px 8px;' src='http://www.mymusichabits.com/resource/chart.php?username=essychu&color=0f4058&data=67,33&labels=67%25%20%20(28416)|33%25%20%20(13996)&type=website' alt='music listening habits'/></a>
         </div>
 <!--         <a class="map-button" data-toggle="collapse" data-target="#bubbles"><span class="fa fa-plus"></span>My Bubbles</a>
