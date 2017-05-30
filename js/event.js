@@ -49,128 +49,115 @@ function initMap() {
           lng: position.coords.longitude
         };
 
-                  var locationSearch = '';
-                  $.getJSON("https://ws.audioscrobbler.com/2.0/?method=track.search&track=San%20Diego&api_key=6df5baf8c242a7d5eef05774443864a3&limit=3&format=json&callback=?", function(json) {
-                      locationSearch += "<h1>Tracks related to \"San Diego\":</h1>";
-                      $.each(json.results.trackmatches.track, function(i, item) {
-                          locationSearch += "<p><a href=" + item.url + " target='_blank'>" + item.name + " - " +  item.artist + "</a></p>";
-                      });
-                  });
-                  $.getJSON("https://ws.audioscrobbler.com/2.0/?method=artist.search&artist=San%20Diego&api_key=6df5baf8c242a7d5eef05774443864a3&limit=3&format=json&callback=?", function(json) {
-                      locationSearch += "<h1>Artists related to \"San Diego\":</h1>";
-                      $.each(json.results.artistmatches.artist, function(i, item) {
-                          locationSearch += "<p><a href=" + item.url + " target='_blank'>" + item.name + " - " + "Listeners : " + item.listeners + "</a></p>";
-                      });
-                  });
-                  $.getJSON("https://ws.audioscrobbler.com/2.0/?method=album.search&album=San%20Diego&api_key=6df5baf8c242a7d5eef05774443864a3&limit=3&format=json&callback=?", function(json) {
-                      locationSearch += "<h1>Albums related to \"San Diego\":</h1>";
-                      $.each(json.results.albummatches.album, function(i, item) {
-                          locationSearch += "<p><a href=" + item.url + " target='_blank'>" + item.name + " - " +  item.artist + "</a></p>";
-                      });
-                  });
-
-                  var marker = new google.maps.Marker({
-                    position: pos,
-                    map: map,
-                    icon: 'https://maps.google.com/mapfiles/ms/icons/yellow-dot.png'
-                  });
-
-
-                  google.maps.event.addListener(marker, "click", function(e) {
-                    infoWindow.setContent(locationSearch);
-                    infoWindow.open(map, marker, locationSearch);
-                  });
-
-
-                  // Add the circle with a radius of 1 mile to the current location.
-            			/*var largeCircle = new google.maps.Circle({
-            				strokeColor: '#FF0000',
-            				strokeOpacity: 0.8,
-            				strokeWeight: 4, /*
-            				fillColor: '#FF0000',
-            				fillOpacity: 0.35,
-            				map: map,
-            				center: pos,
-            				clickable: true,
-            				radius: 1609.34
-            			}); */
-
-                  // Add the circle with a radius of 1 mile to the current location.
-            	/*		var mediumCircle = new google.maps.Circle({
-            				strokeColor: '#FF0000',
-            				strokeOpacity: 0.8,
-            				strokeWeight: 3, /*
-            				fillColor: '#FF0000',
-            				fillOpacity: 0.35,
-            				map: map,
-            				center: pos,
-            				clickable: true,
-            				radius: 965.606
-            			}); */
-
-
-                  // Add the circle with a radius of 1 mile to the current location.
-            			var smallCircle = new google.maps.Circle({
-            				strokeColor: '#FF0000',
-            				strokeOpacity: 0.8,
-            				strokeWeight: 2, /*
-            				fillColor: '#FF0000',
-            				fillOpacity: 0.35, */
-            				map: map,
-            				center: pos,
-            				clickable: true,
-            				radius: 482.803,
-                    editable: true
-            			});
-
-
-                  // change smallCircle if you want markers on a different location
-                  // Getting the boundaries of the map
-                  var bounds = smallCircle.getBounds();
-
-                  // Getting the corners of the map
-                  var southWest = bounds.getSouthWest();
-                  var northEast = bounds.getNorthEast();
-
-                  // Calculating the distance from the top to the bottom of the map
-                  var latSpan = northEast.lat() - southWest.lat() - 0.003;
-
-                  // Calculating the distance from side to side
-                  var lngSpan = northEast.lng() - southWest.lng() - 0.003;
-
-                  // Creating a loop
-                  for (var i = 0; i < 7; i++) {
-
-                  // Creating a random position
-                  var lat = southWest.lat() + latSpan * Math.random();
-                  var lng = southWest.lng() + lngSpan * Math.random();
-
-                  var latlng = new google.maps.LatLng(lat, lng);
-
-                  // Adding a marker to the map
-                  new google.maps.Marker({
-                  position: latlng,
+                var yellowPinText = '';
+                $.getJSON("https://ws.audioscrobbler.com/2.0/?method=user.getToptracks&user=" + getParameterByName('usernameValue') + "&api_key=6df5baf8c242a7d5eef05774443864a3&limit=5&format=json&callback=?", function(json) {
+                    yellowPinText += getParameterByName('usernameValue') + "<h1>\'s Top Tracks:</h1>";
+                    $.each(json.toptracks.track, function(i, item) {
+                        yellowPinText += "<p><a href=" + item.url + " target='_blank'>" + item.name + " - " + "Play count : " +item.playcount + "</a></p>";
+                    });
+                });
+                var marker = new google.maps.Marker({
+                  position: pos,
                   map: map,
-                  icon: 'https://maps.google.com/mapfiles/ms/icons/green-dot.png'
-                  });
-                  console.log(i);
-                }
+                  icon: 'https://maps.google.com/mapfiles/ms/icons/yellow-dot.png'
+                });
 
-              /*    largeCircle.bindTo(marker); */
-             //     mediumCircle.bindTo(marker);
-                  smallCircle.bindTo(marker);
 
-                  infoWindow.setContent('You are here.');
-        					infoWindow.setPosition(pos);
-        					infoWindow.open(map);
-        					map.setCenter(pos);
-        				}, function() {
-        					handleLocationError(true, infoWindow, map.getCenter());
-        				});
-        			} else {
-        				// Browser doesn't support Geolocation
-        				handleLocationError(false, infoWindow, map.getCenter());
-        			}
+                google.maps.event.addListener(marker, "click", function(e) {
+                  infoWindow.setContent(yellowPinText);
+                  infoWindow.open(map, marker, yellowPinText);
+                });
+
+
+                // Add the circle with a radius of 1 mile to the current location.
+          			/*var largeCircle = new google.maps.Circle({
+          				strokeColor: '#FF0000',
+          				strokeOpacity: 0.8,
+          				strokeWeight: 4, /*
+          				fillColor: '#FF0000',
+          				fillOpacity: 0.35,
+          				map: map,
+          				center: pos,
+          				clickable: true,
+          				radius: 1609.34
+          			}); */
+
+                // Add the circle with a radius of 1 mile to the current location.
+          	/*		var mediumCircle = new google.maps.Circle({
+          				strokeColor: '#FF0000',
+          				strokeOpacity: 0.8,
+          				strokeWeight: 3, /*
+          				fillColor: '#FF0000',
+          				fillOpacity: 0.35,
+          				map: map,
+          				center: pos,
+          				clickable: true,
+          				radius: 965.606
+          			}); */
+
+
+                // Add the circle with a radius of 1 mile to the current location.
+          			var smallCircle = new google.maps.Circle({
+          				strokeColor: '#FF0000',
+          				strokeOpacity: 0.8,
+          				strokeWeight: 2, /*
+          				fillColor: '#FF0000',
+          				fillOpacity: 0.35, */
+          				map: map,
+          				center: pos,
+          				clickable: true,
+          				radius: 482.803,
+                  editable: true
+          			});
+
+
+                // change smallCircle if you want markers on a different location
+                // Getting the boundaries of the map
+                var bounds = smallCircle.getBounds();
+
+                // Getting the corners of the map
+                var southWest = bounds.getSouthWest();
+                var northEast = bounds.getNorthEast();
+
+                // Calculating the distance from the top to the bottom of the map
+                var latSpan = northEast.lat() - southWest.lat() - 0.003;
+
+                // Calculating the distance from side to side
+                var lngSpan = northEast.lng() - southWest.lng() - 0.003;
+
+                // Creating a loop
+                for (var i = 0; i < 7; i++) {
+
+                // Creating a random position
+                var lat = southWest.lat() + latSpan * Math.random();
+                var lng = southWest.lng() + lngSpan * Math.random();
+
+                var latlng = new google.maps.LatLng(lat, lng);
+
+                // Adding a marker to the map
+                new google.maps.Marker({
+                position: latlng,
+                map: map,
+                icon: 'https://maps.google.com/mapfiles/ms/icons/green-dot.png'
+                });
+                console.log(i);
+              }
+
+            /*    largeCircle.bindTo(marker); */
+           //     mediumCircle.bindTo(marker);
+                smallCircle.bindTo(marker);
+
+                infoWindow.setContent('You are here.');
+      					infoWindow.setPosition(pos);
+      					infoWindow.open(map);
+      					map.setCenter(pos);
+      				}, function() {
+      					handleLocationError(true, infoWindow, map.getCenter());
+      				});
+      			} else {
+      				// Browser doesn't support Geolocation
+      				handleLocationError(false, infoWindow, map.getCenter());
+      			}
 
 
             // Creating the JSON data
