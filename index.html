@@ -52,10 +52,31 @@ var lastfm = new LastFM({
             <h1> <center>Trend - Music Discovery and Sharing</center> </h1>
         </div>
       </div>
-
-        <div id="map" class="col-sm-8">
+      <div class="col-sm-4">
+        <center>
+        <div id="login">
+            <form action="index.html">
+                    <fieldset>
+                    <legend>Enter a username:</legend>
+                    <input type="text" name="usernameValue" value="">
+                        <br>
+                    <input type="submit" value="SUBMIT">
+                </fieldset>
+            </form>
         </div>
-        
+      <div class="popular-songs">
+        <h4> Check out the popular songs in your area! </h4>
+      <div id="legend-name">
+        Popular Songs of San Diego
+      </div>
+            <iframe src="https://open.spotify.com/embed/user/thesoundsofspotify/playlist/2fZYvfo7EowvA9B8SQZb6M" width="700.3px" height="400px" frameborder="0" allowtransparency="true"></iframe>
+    </div>
+    </div>
+<h4> See what others around you are listening to! </h4>
+</center>
+        <div class="col-sm-8" id="map">
+        </div>
+
         <table id="legend">
           <tr>
             <th id="legend-name">Legend</th>
@@ -71,24 +92,19 @@ var lastfm = new LastFM({
 
 
 
-<div class="col-sm-8">
-  <div id="legend-name">
-    Popular Songs of San Diego
-  </div>
-        <iframe src="https://open.spotify.com/embed/user/thesoundsofspotify/playlist/2fZYvfo7EowvA9B8SQZb6M" width="700px" height="600px" frameborder="0" allowtransparency="true"></iframe>
-</div>
-        <div class="col-sm-3" id="andrew-top">
+<center>
+  <div class="row">
+  <div class="col-sm-12"></div>
+  <div class="col-sm-1"></div>
+        <div class="col-sm-8" id="andrew-top">
           <h2><label id="lbltipAddedComment">Top Tracks</label></h2>
             <script type="text/javascript">
               document.getElementById('lbltipAddedComment').innerHTML = getParameterByName('usernameValue') + "\'s Top Tracks";
             </script>
         </div>
-
-        <div class = "col-sm-8"> <!--
-          <div class="table-popular">
-            <center><h3> Popular Songs of San Diego</h3></center> -->
-
-</div>
+        <div class="col-sm-1"></div>
+              </div>
+</center>
 
          <div class = "col-sm-3" style='text-align:center;width:340px;height:204px;'><a href='http://www.mymusichabits.com/visualize/essychu'><img style='padding:28px 8px 16px 8px;' src='http://www.mymusichabits.com/resource/chart.php?username=essychu&color=0f4058&data=67,33&labels=67%25%20%20(28416)|33%25%20%20(13996)&type=website' alt='music listening habits'/></a>
         </div>

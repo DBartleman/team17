@@ -51,7 +51,7 @@ function initMap() {
 
                 var yellowPinText = '';
                 $.getJSON("https://ws.audioscrobbler.com/2.0/?method=user.getToptracks&user=" + getParameterByName('usernameValue') + "&api_key=6df5baf8c242a7d5eef05774443864a3&limit=5&format=json&callback=?", function(json) {
-                    yellowPinText += getParameterByName('usernameValue') + "<h1>\'s Top Tracks:</h1>";
+                    yellowPinText += "<h3>" + getParameterByName('usernameValue') + "\'s Top Tracks:</h3>";
                     $.each(json.toptracks.track, function(i, item) {
                         yellowPinText += "<p><a href=" + item.url + " target='_blank'>" + item.name + " - " + "Play count : " +item.playcount + "</a></p>";
                     });
