@@ -18,11 +18,13 @@
     <link href="font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnl4n-1UwahP_m5x11AeXXjqi07ZgYaX0">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js does not work if you view the page via file: -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js does not work if you view the page via file: -->
+        <!--[if lt IE 9]>
+        <
+        script src = "https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js" >
+    </script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
     //commented out: &callback=initMap from end of maps api script for debugging. Don't think we have a callback function </script>
@@ -48,7 +50,7 @@ var lastfm = new LastFM({
 <!--        <a class="map-button" data-toggle="collapse" data-target="#map"><span class="fa fa-plus"></span>View Map </a> -->
 
         <div class="row">
-        <div class = "col-sm-12">
+        <div class = "col-sm-12" style="background-color: #222; color: white;">
             <h1> <center>Trend - Music Discovery and Sharing</center> </h1>
         </div>
       </div>
@@ -69,10 +71,9 @@ var lastfm = new LastFM({
       <div id="legend-name">
         Popular Songs of San Diego
       </div>
-            <iframe src="https://open.spotify.com/embed/user/thesoundsofspotify/playlist/2fZYvfo7EowvA9B8SQZb6M" width="700.3px" height="400px" frameborder="0" allowtransparency="true"></iframe>
+            <iframe src="https://open.spotify.com/embed/user/thesoundsofspotify/playlist/2fZYvfo7EowvA9B8SQZb6M" width="700.3px" height="310px" frameborder="0" allowtransparency="true"></iframe>
     </div>
-    </div>
-<h4> See what others around you are listening to! </h4>
+  </div>
 </center>
         <div class="col-sm-8" id="map">
         </div>
