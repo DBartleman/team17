@@ -57,7 +57,7 @@ var lastfm = new LastFM({
         <div id="login">
             <form action="index.html">
                     <fieldset>
-                    <legend>Enter a username:</legend>
+                    <legend>Enter a <a href="https://last.fm">Last.fm</a> username:</legend>
                     <input type="text" name="usernameValue" value="">
                         <br>
                     <input type="submit" value="SUBMIT">
@@ -236,7 +236,7 @@ var lastfm = new LastFM({
         if (!results[2]) return '';
         return decodeURIComponent(results[2].replace(/\+/g, " "));
     }
-    document.write('<center><iframe class="visualizer" src="https://www.mymusichabits.com/visualize/' + getParameterByName('usernameValue') + '"></iframe></center>');
+ //   document.write('<center><iframe class="visualizer" src="https://www.mymusichabits.com/visualize/' + getParameterByName('usernameValue') + '"></iframe></center>');
 </script>
 
 </body>
