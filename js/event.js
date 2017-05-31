@@ -257,7 +257,15 @@ function initMap() {
                 radius: 482.803,
                 editable: true
             });
-
+        function radiusDisplay(smallCircle){
+            var radiusMeters = smallCircle.radius;
+            var radiusKilometers = (radiusMeters/1000).toFixed(2);
+            var radiusHTML = '<p><img src ="/img/legendCirclePic.png" style="margin:5px;"></img> Radius = ' + radiusKilometers + ' kilometers</p>';
+            $('#legend').append(radiusHTML);
+        }
+        
+        radiusDisplay(smallCircle);
+        
 
             // change smallCircle if you want markers on a different location
             // Getting the boundaries of the map
