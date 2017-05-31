@@ -145,3 +145,7 @@ legend{
   font-size: 22px;
   border-bottom: none !important;
 }
+
+.visualizer{
+  height: 650px;
+}

@@ -105,10 +105,10 @@ var lastfm = new LastFM({
         <div class="col-sm-1"></div>
               </div>
 </center>
-
+<!--
          <div class = "col-sm-3" style='text-align:center;width:340px;height:204px;'><a href='http://www.mymusichabits.com/visualize/essychu'><img style='padding:28px 8px 16px 8px;' src='http://www.mymusichabits.com/resource/chart.php?username=essychu&color=0f4058&data=67,33&labels=67%25%20%20(28416)|33%25%20%20(13996)&type=website' alt='music listening habits'/></a>
         </div>
-<!--         <a class="map-button" data-toggle="collapse" data-target="#bubbles"><span class="fa fa-plus"></span>My Bubbles</a>
+         <a class="map-button" data-toggle="collapse" data-target="#bubbles"><span class="fa fa-plus"></span>My Bubbles</a>
             <div id="bubbles" class="collapse">
                 <p>hello bubbles </p>
             </div>
@@ -236,7 +236,7 @@ var lastfm = new LastFM({
         if (!results[2]) return '';
         return decodeURIComponent(results[2].replace(/\+/g, " "));
     }
-    document.write('<iframe src="http://www.mymusichabits.com/visualize/' + getParameterByName('usernameValue') + '"></iframe>');
+    document.write('<center><iframe class="visualizer" src="http://www.mymusichabits.com/visualize/' + getParameterByName('usernameValue') + '"></iframe></center>');
 </script>
 
 </body>
