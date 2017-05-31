@@ -18,7 +18,7 @@ $(document).ready(function() {
         });
         $('#andrew-top').append(html);
     }); /*
-		$.getJSON('https://ws.audioscrobbler.com/2.0/?method=user.getToptracks&user=Essychu&api_key=6df5baf8c242a7d5eef05774443864a3&limit=10&format=json&callback=?', function(data) {
+    $.getJSON('https://ws.audioscrobbler.com/2.0/?method=user.getToptracks&user=Essychu&api_key=6df5baf8c242a7d5eef05774443864a3&limit=10&format=json&callback=?', function(data) {
     *///data is the JSON string
 
 });
@@ -40,7 +40,67 @@ function initMap() {
 
     infoWindow = new google.maps.InfoWindow;
 
-
+  var user0 = "<h3>erwtsnert\'s Top Tracks:</h3>";
+  $.getJSON("https://ws.audioscrobbler.com/2.0/?method=user.getToptracks&user=erwtsnert&api_key=6df5baf8c242a7d5eef05774443864a3&limit=5&format=json&callback=?", function(json) {
+      $.each(json.toptracks.track, function(i, item) {
+          user0 += "<p><a href=" + item.url + " target='_blank'>" + item.name + " - " + "Play count : " +item.playcount + "</a></p>";
+      });
+  });
+  var user1 = "<h3>EconomistX\'s Top Tracks:</h3>";
+  $.getJSON("https://ws.audioscrobbler.com/2.0/?method=user.getToptracks&user=EconomistX&api_key=6df5baf8c242a7d5eef05774443864a3&limit=5&format=json&callback=?", function(json) {
+      $.each(json.toptracks.track, function(i, item) {
+          user1 += "<p><a href=" + item.url + " target='_blank'>" + item.name + " - " + "Play count : " +item.playcount + "</a></p>";
+      });
+  });
+  var user2 = "<h3>rngchan\'s Top Tracks:</h3>";
+  $.getJSON("https://ws.audioscrobbler.com/2.0/?method=user.getToptracks&user=rngchan&api_key=6df5baf8c242a7d5eef05774443864a3&limit=5&format=json&callback=?", function(json) {
+      $.each(json.toptracks.track, function(i, item) {
+          user2 += "<p><a href=" + item.url + " target='_blank'>" + item.name + " - " + "Play count : " +item.playcount + "</a></p>";
+      });
+  });
+  var user3 = "<h3>bucko\'s Top Tracks:</h3>";
+  $.getJSON("https://ws.audioscrobbler.com/2.0/?method=user.getToptracks&user=bucko&api_key=6df5baf8c242a7d5eef05774443864a3&limit=5&format=json&callback=?", function(json) {
+      $.each(json.toptracks.track, function(i, item) {
+          user3 += "<p><a href=" + item.url + " target='_blank'>" + item.name + " - " + "Play count : " +item.playcount + "</a></p>";
+      });
+  });
+  var user4 = "<h3>unguidedone\'s Top Tracks:</h3>";
+  $.getJSON("https://ws.audioscrobbler.com/2.0/?method=user.getToptracks&user=unguidedone&api_key=6df5baf8c242a7d5eef05774443864a3&limit=5&format=json&callback=?", function(json) {
+      $.each(json.toptracks.track, function(i, item) {
+          user4 += "<p><a href=" + item.url + " target='_blank'>" + item.name + " - " + "Play count : " +item.playcount + "</a></p>";
+      });
+  });
+  var user5 = "<h3>ImmuPerkele\'s Top Tracks:</h3>";
+  $.getJSON("https://ws.audioscrobbler.com/2.0/?method=user.getToptracks&user=ImmuPerkele&api_key=6df5baf8c242a7d5eef05774443864a3&limit=5&format=json&callback=?", function(json) {
+      $.each(json.toptracks.track, function(i, item) {
+          user5 += "<p><a href=" + item.url + " target='_blank'>" + item.name + " - " + "Play count : " +item.playcount + "</a></p>";
+      });
+  });
+  var user6 = "<h3>tioga060\'s Top Tracks:</h3>";
+  $.getJSON("https://ws.audioscrobbler.com/2.0/?method=user.getToptracks&user=tioga060&api_key=6df5baf8c242a7d5eef05774443864a3&limit=5&format=json&callback=?", function(json) {
+      $.each(json.toptracks.track, function(i, item) {
+          user6 += "<p><a href=" + item.url + " target='_blank'>" + item.name + " - " + "Play count : " +item.playcount + "</a></p>";
+      });
+  });
+  var user7 = "<h3>Mazzerin\'s Top Tracks:</h3>";
+  $.getJSON("https://ws.audioscrobbler.com/2.0/?method=user.getToptracks&user=Mazzerin&api_key=6df5baf8c242a7d5eef05774443864a3&limit=5&format=json&callback=?", function(json) {
+      $.each(json.toptracks.track, function(i, item) {
+          user7 += "<p><a href=" + item.url + " target='_blank'>" + item.name + " - " + "Play count : " +item.playcount + "</a></p>";
+      });
+  });
+  var user8 = "<h3>vaatibal\'s Top Tracks:</h3>";
+  $.getJSON("https://ws.audioscrobbler.com/2.0/?method=user.getToptracks&user=vaatibal&api_key=6df5baf8c242a7d5eef05774443864a3&limit=5&format=json&callback=?", function(json) {
+      $.each(json.toptracks.track, function(i, item) {
+          user8 += "<p><a href=" + item.url + " target='_blank'>" + item.name + " - " + "Play count : " +item.playcount + "</a></p>";
+      });
+  });
+  var user9 = "<h3>Ryuuki-san\'s Top Tracks:</h3>";
+  $.getJSON("https://ws.audioscrobbler.com/2.0/?method=user.getToptracks&user=Ryuuki-san&api_key=6df5baf8c242a7d5eef05774443864a3&limit=5&format=json&callback=?", function(json) {
+      $.each(json.toptracks.track, function(i, item) {
+          user9 += "<p><a href=" + item.url + " target='_blank'>" + item.name + " - " + "Play count : " +item.playcount + "</a></p>";
+      });
+  });
+// add more users here if adding more pins
     // Try HTML5 geolocation.
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function(position) {
@@ -70,45 +130,45 @@ function initMap() {
 
 
                 // Add the circle with a radius of 1 mile to the current location.
-          			/*var largeCircle = new google.maps.Circle({
-          				strokeColor: '#FF0000',
-          				strokeOpacity: 0.8,
-          				strokeWeight: 4, /*
-          				fillColor: '#FF0000',
-          				fillOpacity: 0.35,
-          				map: map,
-          				center: pos,
-          				clickable: true,
-          				radius: 1609.34
-          			}); */
+                /*var largeCircle = new google.maps.Circle({
+                  strokeColor: '#FF0000',
+                  strokeOpacity: 0.8,
+                  strokeWeight: 4, /*
+                  fillColor: '#FF0000',
+                  fillOpacity: 0.35,
+                  map: map,
+                  center: pos,
+                  clickable: true,
+                  radius: 1609.34
+                }); */
 
                 // Add the circle with a radius of 1 mile to the current location.
-          	/*		var mediumCircle = new google.maps.Circle({
-          				strokeColor: '#FF0000',
-          				strokeOpacity: 0.8,
-          				strokeWeight: 3, /*
-          				fillColor: '#FF0000',
-          				fillOpacity: 0.35,
-          				map: map,
-          				center: pos,
-          				clickable: true,
-          				radius: 965.606
-          			}); */
+            /*    var mediumCircle = new google.maps.Circle({
+                  strokeColor: '#FF0000',
+                  strokeOpacity: 0.8,
+                  strokeWeight: 3, /*
+                  fillColor: '#FF0000',
+                  fillOpacity: 0.35,
+                  map: map,
+                  center: pos,
+                  clickable: true,
+                  radius: 965.606
+                }); */
 
 
                 // Add the circle with a radius of 1 mile to the current location.
-          			var smallCircle = new google.maps.Circle({
-          				strokeColor: '#FF0000',
-          				strokeOpacity: 0.8,
-          				strokeWeight: 2, /*
-          				fillColor: '#FF0000',
-          				fillOpacity: 0.35, */
-          				map: map,
-          				center: pos,
-          				clickable: true,
-          				radius: 482.803,
+                var smallCircle = new google.maps.Circle({
+                  strokeColor: '#FF0000',
+                  strokeOpacity: 0.8,
+                  strokeWeight: 2, /*
+                  fillColor: '#FF0000',
+                  fillOpacity: 0.35, */
+                  map: map,
+                  center: pos,
+                  clickable: true,
+                  radius: 482.803,
                   editable: true
-          			});
+                });
 
 
                 // change smallCircle if you want markers on a different location
@@ -128,36 +188,69 @@ function initMap() {
                 // Creating a loop
                 for (var i = 0; i < 7; i++) {
 
-                // Creating a random position
-                var lat = southWest.lat() + latSpan * Math.random();
-                var lng = southWest.lng() + lngSpan * Math.random();
+                  // Creating a random position
+                  var lat = southWest.lat() + latSpan * Math.random();
+                  var lng = southWest.lng() + lngSpan * Math.random();
 
-                var latlng = new google.maps.LatLng(lat, lng);
+                  var latlng = new google.maps.LatLng(lat, lng);
 
-                // Adding a marker to the map
-                new google.maps.Marker({
-                position: latlng,
-                map: map,
-                icon: 'https://maps.google.com/mapfiles/ms/icons/green-dot.png'
-                });
-                console.log(i);
-              }
+                  // Adding a marker to the map
+                  var markers = new google.maps.Marker({
+                    position: latlng,
+                    map: map,
+                    icon: 'https://maps.google.com/mapfiles/ms/icons/green-dot.png'
+                  });
+                // Creating a closure to retain the correct data, notice how I pass the current data in the loop into the closure (marker, data)
+            (function(markers, i, user0, user1, user2, user3, user4, user5, user6, user7) { // add more users here if adding more pins
+              // Attaching a click event to the current marker
+              google.maps.event.addListener(markers, "click", function(e) {
+                var data = '';
+                if (i == 0) {
+                data = user0; 
+                }
+                if (i == 1) {
+                data = user1; 
+                }
+                if (i == 2) {
+                data = user2; 
+                }
+                if (i == 3) {
+                data = user3; 
+                }
+                if (i == 4) {
+                data = user4; 
+                }
+                if (i == 5) {
+                data = user5; 
+                }
+                if (i == 6) {
+                data = user6; 
+                }
+                if (i == 7) {
+                data = user7; 
+                }// add more users here if adding more pins
+              infoWindow.setContent(data);
+              infoWindow.open(map, markers);
+              });
+
+            })(markers, i, user0, user1, user2, user3, user4, user5, user6, user7);// add more users here if adding more pins
+                }
 
             /*    largeCircle.bindTo(marker); */
            //     mediumCircle.bindTo(marker);
                 smallCircle.bindTo(marker);
 
                 infoWindow.setContent('You are here.');
-      					infoWindow.setPosition(pos);
-      					infoWindow.open(map);
-      					map.setCenter(pos);
-      				}, function() {
-      					handleLocationError(true, infoWindow, map.getCenter());
-      				});
-      			} else {
-      				// Browser doesn't support Geolocation
-      				handleLocationError(false, infoWindow, map.getCenter());
-      			}
+                infoWindow.setPosition(pos);
+                infoWindow.open(map);
+                map.setCenter(pos);
+              }, function() {
+                handleLocationError(true, infoWindow, map.getCenter());
+              });
+            } else {
+              // Browser doesn't support Geolocation
+              handleLocationError(false, infoWindow, map.getCenter());
+            }
 
 
             // Creating the JSON data
@@ -175,171 +268,171 @@ function initMap() {
 
 
             var citymap = {
-            	sandiego: {
-            	  center: {lat: 32.8801, lng: -117.2340},
-            		listens: 1
-            	}
+              sandiego: {
+                center: {lat: 32.8801, lng: -117.2340},
+                listens: 1
+              }
             };
 
 
-        		var infoWindow = new google.maps.InfoWindow();
+            var infoWindow = new google.maps.InfoWindow();
 
-        		// Looping through the JSON data
-        		for (var i = 0, length = json.length; i < length; i++) {
+            // Looping through the JSON data
+            for (var i = 0, length = json.length; i < length; i++) {
 
-        			var data = json[i],
-        				latLng = new google.maps.LatLng(data.lat, data.lng);
+              var data = json[i],
+                latLng = new google.maps.LatLng(data.lat, data.lng);
 
 
-        				// Creating a marker and putting it on the map
-        				var markers = new google.maps.Marker({
-        					position: latLng,
-        					map: map,
-        					title: city,
+                // Creating a marker and putting it on the map
+                var markers = new google.maps.Marker({
+                  position: latLng,
+                  map: map,
+                  title: city,
                   icon: 'https://maps.google.com/mapfiles/ms/icons/green-dot.png'
-        				});
+                });
 
 
-        			// Creating a closure to retain the correct data, notice how I pass the current data in the loop into the closure (marker, data)
-        			(function(markers, data) {
-        				var andrewHtml = '';
-        			    $.getJSON("https://ws.audioscrobbler.com/2.0/?method=user.getToptracks&user=Essychu&api_key=6df5baf8c242a7d5eef05774443864a3&limit=5&format=json&callback=?", function(json) {
-        			        $.each(json.toptracks.track, function(i, item) {
-        			            andrewHtml += "<p><a href=" + item.url + " target='_blank'>" + item.name + " - " + "Play count : " +item.playcount + "</a></p>";
-        			        });
-        			    });
+              // Creating a closure to retain the correct data, notice how I pass the current data in the loop into the closure (marker, data)
+              (function(markers, data) {
+                var andrewHtml = '';
+                  $.getJSON("https://ws.audioscrobbler.com/2.0/?method=user.getToptracks&user=Essychu&api_key=6df5baf8c242a7d5eef05774443864a3&limit=5&format=json&callback=?", function(json) {
+                      $.each(json.toptracks.track, function(i, item) {
+                          andrewHtml += "<p><a href=" + item.url + " target='_blank'>" + item.name + " - " + "Play count : " +item.playcount + "</a></p>";
+                      });
+                  });
 
-        				// Attaching a click event to the current marker
-        				google.maps.event.addListener(markers, "click", function(e) {
-        					if (data.city == "Chicago, IL") {
-        						infoWindow.setContent("chicagoooooo");
-        						infoWindow.open(map, markers);
-        					}
-        					if (data.city == "San Diego, CA") {
-        						infoWindow.setContent("<div class=info-box><h2> Andrew's Top Tracks</h2>" + andrewHtml);
-        						infoWindow.open(map, markers);
-        					}
+                // Attaching a click event to the current marker
+                google.maps.event.addListener(markers, "click", function(e) {
+                  if (data.city == "Chicago, IL") {
+                    infoWindow.setContent("chicagoooooo");
+                    infoWindow.open(map, markers);
+                  }
+                  if (data.city == "San Diego, CA") {
+                    infoWindow.setContent("<div class=info-box><h2> Andrew's Top Tracks</h2>" + andrewHtml);
+                    infoWindow.open(map, markers);
+                  }
                   else{
-        					infoWindow.setContent('<div class="info-box"><h2>' + data.city + '</h2>'+ data.artist + '</br>' + data.listeners + " listeners");
-        					infoWindow.open(map, markers, contentString);
+                  infoWindow.setContent('<div class="info-box"><h2>' + data.city + '</h2>'+ data.artist + '</br>' + data.listeners + " listeners");
+                  infoWindow.open(map, markers, contentString);
                 }
-        				});
+                });
 
-        			})(markers, data);
+              })(markers, data);
 
 
-        		}
+            }
 
                 //Cynthia's last.fm pin
                        for (var i = 0, length = json.length; i < length; i++) {
 
-        			var data = json[i],
-        				cynthialatLng = {
+              var data = json[i],
+                cynthialatLng = {
                             lat: 32.8858961,
                             lng: -117.2434672
                         }
 
 
 
-        				// Creating a marker and putting it on the map
-        				var markers = new google.maps.Marker({
-        					position: cynthialatLng,
-        					map: map,
-        					title: city,
+                // Creating a marker and putting it on the map
+                var markers = new google.maps.Marker({
+                  position: cynthialatLng,
+                  map: map,
+                  title: city,
                   icon: 'https://maps.google.com/mapfiles/ms/icons/green-dot.png'
-        				});
+                });
 
 
-        			// Creating a closure to retain the correct data, notice how I pass the current data in the loop into the closure (marker, data)
-        			(function(markers, data) {
-        				var cynthiaHTML = '';
-        			    $.getJSON("https://ws.audioscrobbler.com/2.0/?method=user.getToptracks&user=cynthiahong&api_key=6df5baf8c242a7d5eef05774443864a3&limit=5&format=json&callback=?", function(json) {
-        			        $.each(json.toptracks.track, function(i, item) {
-        			            cynthiaHTML += "<p><a href=" + item.url + " target='_blank'>" + item.name + " - " + "Play count : " +item.playcount + "</a></p>";
-        			        });
-        			    });
+              // Creating a closure to retain the correct data, notice how I pass the current data in the loop into the closure (marker, data)
+              (function(markers, data) {
+                var cynthiaHTML = '';
+                  $.getJSON("https://ws.audioscrobbler.com/2.0/?method=user.getToptracks&user=cynthiahong&api_key=6df5baf8c242a7d5eef05774443864a3&limit=5&format=json&callback=?", function(json) {
+                      $.each(json.toptracks.track, function(i, item) {
+                          cynthiaHTML += "<p><a href=" + item.url + " target='_blank'>" + item.name + " - " + "Play count : " +item.playcount + "</a></p>";
+                      });
+                  });
 
-        				// Attaching a click event to the current marker
-        				google.maps.event.addListener(markers, "click", function(e) {
-        					if (data.city == "Chicago, IL") {
-        						infoWindow.setContent("chicagoooooo");
-        						infoWindow.open(map, markers);
-        					}
-        					if (data.city == "San Diego, CA") {
-        						infoWindow.setContent("<div class=info-box><h2> Cynthia's Top Tracks</h2>" + cynthiaHTML);
-        						infoWindow.open(map, markers);
-        					}
+                // Attaching a click event to the current marker
+                google.maps.event.addListener(markers, "click", function(e) {
+                  if (data.city == "Chicago, IL") {
+                    infoWindow.setContent("chicagoooooo");
+                    infoWindow.open(map, markers);
+                  }
+                  if (data.city == "San Diego, CA") {
+                    infoWindow.setContent("<div class=info-box><h2> Cynthia's Top Tracks</h2>" + cynthiaHTML);
+                    infoWindow.open(map, markers);
+                  }
                   else{
-        					infoWindow.setContent('<div class="info-box"><h2>' + data.city + '</h2>'+ data.artist + '</br>' + data.listeners + " listeners");
-        					infoWindow.open(map, markers, contentString);
+                  infoWindow.setContent('<div class="info-box"><h2>' + data.city + '</h2>'+ data.artist + '</br>' + data.listeners + " listeners");
+                  infoWindow.open(map, markers, contentString);
                 }
-        				});
+                });
 
-        			})(markers, data);
+              })(markers, data);
 
-        		}
+            }
 
                 //tyler's last.fm pin
                 for (var i = 0, length = json.length; i < length; i++) {
 
-        			var data = json[i],
-        				tylerlatLng = {
+              var data = json[i],
+                tylerlatLng = {
                             lat: 32.8829164,
                             lng: -117.2350471
                         }
 
 
 
-        				// Creating a marker and putting it on the map
-        				var markers = new google.maps.Marker({
-        					position: tylerlatLng,
-        					map: map,
-        					title: city,
+                // Creating a marker and putting it on the map
+                var markers = new google.maps.Marker({
+                  position: tylerlatLng,
+                  map: map,
+                  title: city,
                   icon: 'https://maps.google.com/mapfiles/ms/icons/green-dot.png'
-        				});
+                });
 
 
-        			// Creating a closure to retain the correct data, notice how I pass the current data in the loop into the closure (marker, data)
-        			(function(markers, data) {
-        				var tylerHtml = '';
-        			    $.getJSON("https://ws.audioscrobbler.com/2.0/?method=user.getToptracks&user=ctsorensen&api_key=6df5baf8c242a7d5eef05774443864a3&limit=5&format=json&callback=?", function(json) {
-        			        $.each(json.toptracks.track, function(i, item) {
-        			            tylerHtml += "<p><a href=" + item.url + " target='_blank'>" + item.name + " - " + "Play count : " +item.playcount + "</a></p>";
-        			        });
-        			    });
+              // Creating a closure to retain the correct data, notice how I pass the current data in the loop into the closure (marker, data)
+              (function(markers, data) {
+                var tylerHtml = '';
+                  $.getJSON("https://ws.audioscrobbler.com/2.0/?method=user.getToptracks&user=ctsorensen&api_key=6df5baf8c242a7d5eef05774443864a3&limit=5&format=json&callback=?", function(json) {
+                      $.each(json.toptracks.track, function(i, item) {
+                          tylerHtml += "<p><a href=" + item.url + " target='_blank'>" + item.name + " - " + "Play count : " +item.playcount + "</a></p>";
+                      });
+                  });
 
-        				// Attaching a click event to the current marker
-        				google.maps.event.addListener(markers, "click", function(e) {
-        					if (data.city == "Chicago, IL") {
-        						infoWindow.setContent("chicagoooooo");
-        						infoWindow.open(map, markers);
-        					}
-        					if (data.city == "San Diego, CA") {
-        						infoWindow.setContent("<div class=info-box><h2> Tyler's Top Tracks</h2>" + tylerHtml);
-        						infoWindow.open(map, markers);
-        					}
+                // Attaching a click event to the current marker
+                google.maps.event.addListener(markers, "click", function(e) {
+                  if (data.city == "Chicago, IL") {
+                    infoWindow.setContent("chicagoooooo");
+                    infoWindow.open(map, markers);
+                  }
+                  if (data.city == "San Diego, CA") {
+                    infoWindow.setContent("<div class=info-box><h2> Tyler's Top Tracks</h2>" + tylerHtml);
+                    infoWindow.open(map, markers);
+                  }
                   else{
-        					infoWindow.setContent('<div class="info-box"><h2>' + data.city + '</h2>'+ data.artist + '</br>' + data.listeners + " listeners");
-        					infoWindow.open(map, markers, contentString);
+                  infoWindow.setContent('<div class="info-box"><h2>' + data.city + '</h2>'+ data.artist + '</br>' + data.listeners + " listeners");
+                  infoWindow.open(map, markers, contentString);
                 }
-        				});
+                });
 
-        			})(markers, data);
+              })(markers, data);
 
-        		}
-
-
-        		// Construct the circle for each value in citymap.
-        		// places the other user pins
-        		for (var city in citymap) {
-
-        			console.log(city);
-
-        		}
+            }
 
 
+            // Construct the circle for each value in citymap.
+            // places the other user pins
+            for (var city in citymap) {
 
-        	}
+              console.log(city);
+
+            }
+
+
+
+          }
 
 /* opens map in the accordian */
 initMap();
