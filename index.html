@@ -67,13 +67,13 @@ var lastfm = new LastFM({
                 </fieldset>
             </form>
         </div>
-      <div class="popular-songs">
-        <h4> Check out the popular songs in your area! </h4>
-      <div id="legend-name">
-        Popular Songs of San Diego
-      </div>
-            <iframe src="https://open.spotify.com/embed/user/thesoundsofspotify/playlist/2fZYvfo7EowvA9B8SQZb6M" width="700.3px" height="310px" frameborder="0" allowtransparency="true"></iframe>
-    </div>
+            <div id="andrew-top">
+          <h2><label id="lbltipAddedComment">Top Tracks</label></h2>
+            <script type="text/javascript">
+              document.getElementById('lbltipAddedComment').innerHTML = getParameterByName('usernameValue') + "\'s Top Tracks";
+            </script>
+            </div>
+      
   </div>
 </center>
         <div class="col-sm-8" id="map">
@@ -95,17 +95,18 @@ var lastfm = new LastFM({
 
 
 <center>
-  <div class="row">
-  <div class="col-sm-12"></div>
-  <div class="col-sm-1"></div>
-        <div class="col-sm-8" id="andrew-top">
-          <h2><label id="lbltipAddedComment">Top Tracks</label></h2>
-            <script type="text/javascript">
-              document.getElementById('lbltipAddedComment').innerHTML = getParameterByName('usernameValue') + "\'s Top Tracks";
-            </script>
-        </div>
-        <div class="col-sm-1"></div>
-              </div>
+    <br><br>
+  <div class="row"> 
+    <div class="popular-songs col-sm-10" style="float: none; margin: 0 auto; ">
+        
+      <center><h4> Check out the popular songs in your area! </h4></center>
+      <div id="legend-name">
+        Popular Songs of San Diego
+      </div>
+            <iframe src="https://open.spotify.com/embed/user/thesoundsofspotify/playlist/2fZYvfo7EowvA9B8SQZb6M" width="700.3px" height="310px" frameborder="0" allowtransparency="true"></iframe>
+    </div>
+
+    </div>
 </center>
 <!--
          <div class = "col-sm-3" style='text-align:center;width:340px;height:204px;'><a href='http://www.mymusichabits.com/visualize/essychu'><img style='padding:28px 8px 16px 8px;' src='http://www.mymusichabits.com/resource/chart.php?username=essychu&color=0f4058&data=67,33&labels=67%25%20%20(28416)|33%25%20%20(13996)&type=website' alt='music listening habits'/></a>
