@@ -261,7 +261,7 @@ function initMap() {
             var radiusMeters = smallCircle.radius;
             var radiusKilometers = (radiusMeters/1000).toFixed(2);
             var radiusHTML = '<p><img src ="/img/legendCirclePic.png" style="margin:5px;"></img> Radius = ' + radiusKilometers + ' kilometers</p>';
-            $('#legend').append(radiusHTML);
+            //$('#legend').append(radiusHTML);  //disabled because the radius does not show up, it shows a missing file icon
         }
         
         radiusDisplay(smallCircle);
