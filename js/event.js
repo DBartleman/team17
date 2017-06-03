@@ -263,9 +263,9 @@ function initMap() {
             var radiusHTML = '<p><img src ="/img/legendCirclePic.png" style="margin:5px;"></img> Radius = ' + radiusKilometers + ' kilometers</p>';
             //$('#legend').append(radiusHTML);  //disabled because the radius does not show up, it shows a missing file icon
         }
-        
+
         radiusDisplay(smallCircle);
-        
+
 
             // change smallCircle if you want markers on a different location
             // Getting the boundaries of the map
@@ -350,7 +350,7 @@ function initMap() {
 
 
     // Creating the JSON data
-    var json = [{
+/*    var json = [{
             "city": "San Diego, CA",
             "lat": 32.8801,
             "lng": -117.2340,
@@ -360,7 +360,7 @@ function initMap() {
         }
 
     ]
-
+*/
 
     var citymap = {
         sandiego: {
@@ -392,7 +392,7 @@ function initMap() {
 
 
         // Creating a closure to retain the correct data, notice how I pass the current data in the loop into the closure (marker, data)
-        (function(markers, data) {
+/*        (function(markers, data) {
             var andrewHtml = '';
             $.getJSON("https://ws.audioscrobbler.com/2.0/?method=user.getToptracks&user=Essychu&api_key=6df5baf8c242a7d5eef05774443864a3&limit=5&format=json&callback=?", function(json) {
                 $.each(json.toptracks.track, function(i, item) {
@@ -513,7 +513,7 @@ function initMap() {
             });
 
         })(markers, data);
-
+*/
     }
 
 
